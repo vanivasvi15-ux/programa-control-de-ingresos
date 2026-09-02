@@ -86,6 +86,14 @@ function crearConexion(): DatabaseSync {
     --   variable_recurrente -> se repite pero el monto cambia (ej. luz)
     -- "proxima_fecha": sólo tiene sentido si recurrencia != 'unico';
     --   es la fecha en que toca volver a registrarlo / cobrarlo.
+    -- "frecuencia": cada cuánto se repite un fijo / variable recurrente
+    --   (mensual, quincenal, semanal, bimestral, trimestral, semestral,
+    --   anual). NULL para los movimientos únicos. Al "registrar" un fijo
+    --   desde /dinero/fijos se crea un movimiento único con su fecha y se
+    --   corre proxima_fecha hacia adelante según esta frecuencia.
+    -- "generado_por_fijo_id": si este movimiento nació de "registrar" un
+    --   fijo, apunta al id de ese fijo (para saber que el mes ya está
+    --   cubierto y para poder auditarlo).
     -- "origen": si lo cargó el bot de WhatsApp o alguien desde el panel.
     -- "estado":
     --   activo   -> cuenta para los totales
@@ -102,6 +110,8 @@ function crearConexion(): DatabaseSync {
       recurrencia TEXT NOT NULL DEFAULT 'unico'
         CHECK (recurrencia IN ('unico', 'fijo', 'variable_recurrente')),
       proxima_fecha TEXT,
+      frecuencia TEXT,
+      generado_por_fijo_id INTEGER REFERENCES movimientos(id),
       origen TEXT NOT NULL DEFAULT 'panel'
         CHECK (origen IN ('whatsapp', 'panel')),
       usuario_id INTEGER REFERENCES usuarios(id),
@@ -146,7 +156,12 @@ function crearConexion(): DatabaseSync {
   // porque si la columna ya existe SQLite tira "duplicate column" y eso es
   // esperable. Por ahora no hay ninguna — se van sumando acá a medida que
   // el esquema cambie, sin borrar la base.
-  const migraciones: string[] = [];
+  const migraciones: string[] = [
+    // Paso 2: frecuencia de los fijos y enlace al fijo que generó un
+    // movimiento (ver comentarios en la tabla movimientos).
+    "ALTER TABLE movimientos ADD COLUMN frecuencia TEXT",
+    "ALTER TABLE movimientos ADD COLUMN generado_por_fijo_id INTEGER REFERENCES movimientos(id)",
+  ];
   for (const sql of migraciones) {
     try {
       db.exec(sql);

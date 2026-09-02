@@ -55,7 +55,7 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   db.prepare(
     `UPDATE movimientos SET
        tipo = ?, monto = ?, categoria_id = ?, fecha = ?, recurrencia = ?,
-       proxima_fecha = ?, estado = ?, nota = ?,
+       proxima_fecha = ?, frecuencia = ?, estado = ?, nota = ?,
        actualizado = datetime('now', 'localtime')
      WHERE id = ?`
   ).run(
@@ -65,6 +65,7 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     d.fecha,
     d.recurrencia,
     d.proxima_fecha,
+    d.frecuencia,
     d.estado,
     d.nota,
     id

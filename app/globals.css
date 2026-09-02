@@ -1,24 +1,96 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   Sistema visual de "Control de Caja"
+   - Colores como variables CSS. El modo oscuro sigue al sistema
+     operativo y sólo cambia los valores de las variables.
+   - Verde = ingreso, rojo = gasto, índigo = acción principal.
+   ============================================================ */
+
+@theme {
+  --color-bg: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef0f3;
+  --color-border: #e4e7eb;
+  --color-text: #1a1d21;
+  --color-muted: #667085;
+  --color-accent: #4f46e5;
+  --color-accent-soft: #eef2ff;
+  --color-income: #059669;
+  --color-income-soft: #ecfdf5;
+  --color-expense: #e11d48;
+  --color-expense-soft: #fff1f3;
+  --color-warn: #b45309;
+  --color-warn-soft: #fffbeb;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
+/* Modo oscuro: se redefinen las mismas variables (los utilitarios de
+   Tailwind compilan a var(--color-*), así que con esto alcanza). */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-bg: #0b0d10;
+    --color-surface: #16191e;
+    --color-surface-2: #1e222a;
+    --color-border: #2a2f38;
+    --color-text: #e8eaed;
+    --color-muted: #98a1ae;
+    --color-accent: #7c7af2;
+    --color-accent-soft: #211f3a;
+    --color-income: #34d399;
+    --color-income-soft: #0f241d;
+    --color-expense: #fb7185;
+    --color-expense-soft: #2a1620;
+    --color-warn: #fbbf24;
+    --color-warn-soft: #241d10;
   }
 }
 
+html {
+  color-scheme: light dark;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Números de dinero: ancho fijo por dígito para alinear columnas. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+/* Sin flechitas en los <input type=number> */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.aparecer {
+  animation: aparecer 0.16s ease-out;
 }

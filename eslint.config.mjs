@@ -5,6 +5,15 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    rules: {
+      // Patrón normal en este panel: al montar una pantalla se hace un
+      // fetch y se guarda el resultado en estado, o se lee localStorage y
+      // se hidrata el estado. Esta regla (nueva y muy estricta) lo marca
+      // como error; acá es a propósito y controlado.
+      "react-hooks/set-state-in-effect": "off",
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:

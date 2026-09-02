@@ -114,8 +114,8 @@ export async function POST(req: NextRequest) {
   const resultado = db
     .prepare(
       `INSERT INTO movimientos
-         (tipo, monto, categoria_id, fecha, recurrencia, proxima_fecha, origen, usuario_id, estado, nota)
-       VALUES (?, ?, ?, ?, ?, ?, 'panel', ?, ?, ?)`
+         (tipo, monto, categoria_id, fecha, recurrencia, proxima_fecha, frecuencia, origen, usuario_id, estado, nota)
+       VALUES (?, ?, ?, ?, ?, ?, ?, 'panel', ?, ?, ?)`
     )
     .run(
       d.tipo,
@@ -124,6 +124,7 @@ export async function POST(req: NextRequest) {
       d.fecha,
       d.recurrencia,
       d.proxima_fecha,
+      d.frecuencia,
       usuario.id,
       d.estado,
       d.nota

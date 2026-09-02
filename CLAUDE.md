@@ -46,10 +46,17 @@ No hay suite de tests.
 
 ## Arquitectura
 
-- `lib/db.ts`: conexión única a SQLite (singleton vía `global.__db` para
-  sobrevivir al hot-reload de Next en dev) + todas las tablas
+- `lib/db.ts`: conexión SQLite **perezosa** (Proxy sobre `global.__db`: la
+  base recién se abre en la primera consulta, no al importar — así
+  `next build` con varios workers no pelea por el lock). Todas las tablas
   (`CREATE TABLE IF NOT EXISTS`) + un array `migraciones` de `ALTER TABLE` en
-  try/catch para bases ya existentes (hoy vacío).
+  try/catch para bases ya existentes.
+- `lib/movimientos-datos.ts`: constantes, tipos y helpers de fecha de
+  movimientos que **no** tocan la base (FRECUENCIAS, RECURRENCIAS,
+  `esFechaValida`, `avanzarFecha`). Vive aparte de `lib/movimientos.ts`
+  (que sí importa `node:sqlite`) para poder usarlo desde componentes del
+  cliente sin arrastrar SQLite al bundle. Regla: los módulos que importan
+  `@/lib/db` son sólo de servidor.
 - **Foreign keys ACTIVADAS** por defecto en `node:sqlite`: antes de agregar un
   `DELETE` sobre una tabla referenciada por otra (`REFERENCES` en `lib/db.ts`),
   limpiar primero las filas que la referencian o el borrado falla entero.
@@ -62,8 +69,18 @@ No hay suite de tests.
   cookie httpOnly `vyv_session`). `lib/auth.ts` expone `usuarioActual()` para
   resolver permisos del lado del servidor en cada endpoint.
 - Pantallas internas bajo `/dinero`, protegidas por `app/dinero/layout.tsx`
-  (chequea sesión → `redirect("/login")`). En el paso 2 ese layout además va a
-  envolver todo con `SidebarLayout` (copiar de `components/` del POS).
+  (chequea sesión → `redirect("/login")`), que además envuelve todo con
+  `SidebarLayout` y con `ProveedorUsuario` (contexto de cliente con el
+  usuario logueado; se lee con `useUsuario()`, ver `components/UsuarioContext.tsx`).
+- UI: Tailwind v4 con variables de color en `app/globals.css` (modo claro/
+  oscuro automático según el sistema). Piezas comunes en `components/ui.tsx`
+  (Tarjeta, Boton, Chip, Segmentado, Modal, EstadoVacio, Campo). Íconos SVG
+  propios en `components/Icono.tsx` (sin librería). Gráficos con `recharts`
+  en `components/Graficos.tsx` — con `isAnimationActive={false}` porque con
+  React 19 la animación de entrada a veces queda trabada y no se ven las
+  barras.
+- ESLint: `react-hooks/set-state-in-effect` está en `off` (patrón normal
+  acá: al montar una pantalla se hace fetch y se guarda en estado).
 
 ## Roles
 
@@ -86,16 +103,19 @@ Se resuelven **siempre del lado del servidor** por `usuarios.rol`:
   `UNIQUE(nombre, tipo)`. Editable desde el panel, nunca hardcodeada.
 - `movimientos` — `id, tipo CHECK(ingreso|gasto), monto INTEGER (pesos, sin
   centavos), categoria_id → categorias, fecha 'YYYY-MM-DD', recurrencia
-  CHECK(unico|fijo|variable_recurrente), proxima_fecha, origen
-  CHECK(whatsapp|panel), usuario_id → usuarios, estado
-  CHECK(activo|pausado|anulado), nota, creado, actualizado`. Índices por
-  fecha, categoria_id y usuario_id.
+  CHECK(unico|fijo|variable_recurrente), proxima_fecha, frecuencia (semanal|
+  quincenal|mensual|bimestral|trimestral|semestral|anual; sólo si recurrencia
+  != unico; validada en la API), generado_por_fijo_id → movimientos (si el
+  movimiento nació de "registrar" un fijo), origen CHECK(whatsapp|panel),
+  usuario_id → usuarios, estado CHECK(activo|pausado|anulado), nota, creado,
+  actualizado`. Índices por fecha, categoria_id y usuario_id.
 - `alertas_config` — `id, tipo CHECK(limite_categoria|fijo_por_vencer|
   resumen_periodico|inactividad), parametros_json, usuario_id_destino →
-  usuarios, activo, creado`. La tabla ya existe; su API y el cron llegan en
-  el paso 3.
+  usuarios, activo, creado`. La forma de `parametros_json` según el tipo se
+  valida en `lib/alertas.ts`. La API ya existe; **el cron que dispara las
+  alertas llega en el paso 3**.
 
-## API (paso 1)
+## API
 
 - `GET /api/categorias` — login. Filtros `?tipo` `?activo`.
 - `POST /api/categorias` — sólo `dueño`. `{ nombre, tipo }`. Si existe pero
@@ -112,21 +132,44 @@ Se resuelven **siempre del lado del servidor** por `usuarios.rol`:
 - `PUT /api/movimientos/[id]` — `encargado` sólo los suyos; `contador` → 403.
 - `DELETE /api/movimientos/[id]` — **no borra**: pone `estado = 'anulado'`.
   Para dar de baja temporal un fijo, `PUT` con `estado = 'pausado'`.
+- `POST /api/movimientos/[id]/registrar` — "registra" un fijo: crea un
+  movimiento `unico` con `generado_por_fijo_id` apuntando al fijo y corre
+  `proxima_fecha` del fijo según su `frecuencia` (`avanzarFecha`). Body
+  opcional `{ monto?, fecha?, nota? }` (para variable_recurrente pide el
+  monto real de esa vez).
+- `GET /api/resumen?mes=AAAA-MM` — todo lo del dashboard ya agregado del
+  lado del servidor: totales del mes y del anterior, desglose por categoría,
+  serie de 6 meses, próximos fijos (con `diasRestantes` y `yaRegistradoEsteMes`),
+  límites con % gastado, últimos movimientos, y proyección a fin de mes
+  (balance + fijos que faltan registrar este mes). Los totales cuentan sólo
+  `recurrencia='unico'` y `estado='activo'`.
+- `GET/POST /api/usuarios`, `PUT/DELETE /api/usuarios/[id]` — sólo `dueño`
+  (el GET lo puede leer cualquiera logueado, para el filtro "por usuario").
+  Nunca devuelve hash/salt. Guardas: no borrarte a vos mismo, tiene que
+  quedar un dueño activo, si el usuario tiene movimientos se desactiva en
+  vez de borrarse.
+- `GET/POST /api/alertas-config`, `PUT/DELETE /api/alertas-config/[id]` —
+  sólo `dueño`. `parametros` (objeto) se valida por tipo y se guarda como
+  JSON en `parametros_json`.
 
-Validación compartida en `lib/movimientos.ts` (`validarDatosMovimiento`,
-`esFechaValida`, serializador con joins).
+Validación compartida de movimientos en `lib/movimientos.ts`
+(`validarDatosMovimiento`, serializador con joins); constantes y fechas en
+`lib/movimientos-datos.ts`.
 
 ## Plan por pasos
 
 1. **[hecho]** Tablas + API de movimientos y categorías (sin tocar el bot).
-2. **Panel web** bajo `/dinero`, protegido con el login:
-   - `/dinero` — dashboard: balance del mes, ingresos vs. gastos, gráfico por
-     categoría, próximos fijos a vencer
-   - `/dinero/movimientos` — listado con filtros, editar/anular
-   - `/dinero/fijos` — recurrentes (fijo y variable_recurrente), pausar/reactivar
-   - `/dinero/configuracion` — categorías, límites por categoría, quién recibe
-     cada alerta
-   - Traer `SidebarLayout` + `Sidebar` del POS y sumarlos al layout de `/dinero`.
+2. **[hecho]** Panel web bajo `/dinero`, protegido con el login:
+   - `/dinero` — dashboard (navegador de mes, KPIs con comparación vs. mes
+     anterior, barras ingresos/gastos 6 meses, torta por categoría,
+     proyección a fin de mes, próximos fijos, límites, últimos movimientos)
+   - `/dinero/movimientos` — filtros (período con presets, tipo, categoría,
+     estado, usuario, búsqueda), totales del filtro, exportar CSV, modal de
+     alta/edición, duplicar, anular
+   - `/dinero/fijos` — recurrentes con estimado mensual (normalizado por
+     frecuencia), pausar/reactivar, "registrar", editar, anular
+   - `/dinero/configuracion` (sólo dueño, con tabs) — categorías (alta/
+     rename/activar/borrar), alertas y límites, usuarios
 3. **Bot de WhatsApp** (clon del de Steve's Burger, instancia nueva y
    separada: otro número, otro proceso) con la IA reprogramada para
    reconocer gastos/ingresos en lenguaje natural ("gasté 15000 en nafta",

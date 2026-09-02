@@ -33,8 +33,17 @@ La base `data.db` se crea sola al primer arranque y **no se sube a GitHub**
 ## Estado
 
 - [x] **Paso 1** — tablas + API de movimientos y categorías
-- [ ] **Paso 2** — panel web bajo `/dinero` (dashboard, movimientos, fijos,
-      configuración)
+- [x] **Paso 2** — panel web bajo `/dinero`:
+  - `/dinero` — dashboard: balance del mes con comparación vs. mes anterior,
+    ingresos vs. gastos de los últimos 6 meses, torta por categoría,
+    proyección a fin de mes, próximos fijos, límites, últimos movimientos
+  - `/dinero/movimientos` — filtros (período, tipo, categoría, estado,
+    usuario, búsqueda), totales del filtro, exportar CSV, alta / edición /
+    duplicar / anular
+  - `/dinero/fijos` — recurrentes con estimado mensual, pausar / reactivar y
+    "registrar" (crea el movimiento del período y corre la próxima fecha)
+  - `/dinero/configuracion` (sólo dueño) — categorías, alertas y límites,
+    usuarios
 - [ ] **Paso 3** — bot de WhatsApp clonado (proceso aparte, IA que interpreta
       gastos/ingresos en lenguaje libre) + alertas automáticas (cron diario)
 
