@@ -4,6 +4,13 @@ data.db
 data.db-journal
 data.db-wal
 data.db-shm
-.env*
+.env
+.env*.local
 tsconfig.tsbuildinfo
 next-env.d.ts
+
+# Bot de WhatsApp (proceso aparte): dependencias, credenciales de sesión y
+# variables. También lo cubre bot-whatsapp/.gitignore, se repite acá por claridad.
+bot-whatsapp/node_modules
+bot-whatsapp/auth
+bot-whatsapp/.env

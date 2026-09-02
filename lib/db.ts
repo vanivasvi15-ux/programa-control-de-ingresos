@@ -149,7 +149,129 @@ function crearConexion(): DatabaseSync {
       activo INTEGER NOT NULL DEFAULT 1,
       creado TEXT NOT NULL DEFAULT (datetime('now', 'localtime'))
     );
+
+    -- ============================================================
+    -- PUENTE CON EL BOT DE WHATSAPP (carpeta aparte "bot-whatsapp",
+    -- proceso Node propio con Baileys + IA). Clonado del POS de Steve's
+    -- Burger: el bot le reporta TODO a estas tablas por HTTP
+    -- (/api/bot-whatsapp/*), nunca se conecta directo desde el panel.
+    -- ============================================================
+    -- Una fila por conversación (por jid de WhatsApp). "estado":
+    --   activa      -> la IA la está llevando
+    --   escalada    -> la IA no entendió algo (monto/categoría), necesita
+    --                  que una persona responda desde el panel
+    --   finalizada  -> ya se registró el movimiento / se cerró a mano
+    -- "movimiento_id": el movimiento que generó esta conversación, si llegó
+    -- a registrarse.
+    CREATE TABLE IF NOT EXISTS bot_conversaciones (
+      jid TEXT PRIMARY KEY,
+      cliente TEXT,
+      estado TEXT NOT NULL DEFAULT 'activa'
+        CHECK (estado IN ('activa', 'escalada', 'finalizada')),
+      motivo_escalado TEXT,
+      movimiento_id INTEGER REFERENCES movimientos(id),
+      creado TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),
+      actualizado TEXT NOT NULL DEFAULT (datetime('now', 'localtime'))
+    );
+
+    CREATE TABLE IF NOT EXISTS bot_mensajes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      jid TEXT NOT NULL,
+      rol TEXT NOT NULL CHECK (rol IN ('cliente', 'bot', 'empleado')),
+      texto TEXT NOT NULL,
+      creado TEXT NOT NULL DEFAULT (datetime('now', 'localtime'))
+    );
+    CREATE INDEX IF NOT EXISTS idx_bot_mensajes_jid ON bot_mensajes(jid);
+
+    -- Fila única (id = 1). "pausado" frena SÓLO la IA (el bot sigue
+    -- conectado y logueando). "conectar" en 0 = el panel pidió apagar la
+    -- conexión entera (sigue vinculado al número, no hay que re-escanear).
+    -- "cambiar_numero_solicitado" en 1 = el panel pidió logout de verdad
+    -- para vincular otro número (el bot lo hace y lo vuelve a 0).
+    -- "conectado" y "qr" los reporta el bot.
+    CREATE TABLE IF NOT EXISTS bot_whatsapp_estado (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      pausado INTEGER NOT NULL DEFAULT 0,
+      conectado INTEGER NOT NULL DEFAULT 0,
+      qr TEXT,
+      conectar INTEGER NOT NULL DEFAULT 1,
+      cambiar_numero_solicitado INTEGER NOT NULL DEFAULT 0
+    );
+
+    -- Cola de mensajes que el sistema principal / el cron de alertas le
+    -- piden al bot que mande. El bot la revisa cada 8 segundos.
+    -- "tipo":
+    --   mensaje -> texto automático del sistema (rol "bot")
+    --   manual  -> respuesta escrita a mano desde el panel (rol "empleado";
+    --              además bloquea la IA de esa conversación)
+    --   control -> "reactivar" | "bloquear": no manda nada, el bot sólo
+    --              cambia el estado en memoria de esa conversación
+    --   aviso   -> alerta automática del cron (límite, fijo por vencer,
+    --              resumen, inactividad) — rol "bot"
+    -- "intentos": tope MAX_INTENTOS en GET /api/bot-whatsapp/comandos para
+    -- que un comando que no se logra marcar "enviado" no se reintente
+    -- para siempre.
+    CREATE TABLE IF NOT EXISTS bot_comandos (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      telefono TEXT NOT NULL,
+      mensaje TEXT NOT NULL,
+      tipo TEXT NOT NULL DEFAULT 'mensaje'
+        CHECK (tipo IN ('mensaje', 'manual', 'control', 'aviso')),
+      estado TEXT NOT NULL DEFAULT 'pendiente',
+      error TEXT,
+      intentos INTEGER NOT NULL DEFAULT 0,
+      creado TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),
+      enviado TEXT
+    );
+
+    -- Mensajes fijos para responder a mano desde el panel sin escribir
+    -- texto libre (se sacó esa opción en el POS después de un bug real de
+    -- reenvío en loop). "etiqueta" = lo que se ve en el botón.
+    CREATE TABLE IF NOT EXISTS bot_respuestas_predeterminadas (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      etiqueta TEXT NOT NULL,
+      texto TEXT NOT NULL,
+      orden INTEGER NOT NULL DEFAULT 0
+    );
+
+    -- Anti-duplicado del cron de alertas: una fila por (clave de alerta,
+    -- día). El cron chequea acá antes de encolar para no mandar el mismo
+    -- aviso dos veces el mismo día si corre más de una vez.
+    CREATE TABLE IF NOT EXISTS bot_avisos_log (
+      clave TEXT NOT NULL,
+      fecha TEXT NOT NULL,
+      creado TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),
+      PRIMARY KEY (clave, fecha)
+    );
   `);
+
+  // Semilla única de bot_respuestas_predeterminadas (sólo si está vacía).
+  try {
+    const yaHay = db.prepare(`SELECT 1 FROM bot_respuestas_predeterminadas LIMIT 1`).get();
+    if (!yaHay) {
+      const ins = db.prepare(
+        `INSERT INTO bot_respuestas_predeterminadas (etiqueta, texto, orden) VALUES (?, ?, ?)`
+      );
+      const iniciales: [string, string][] = [
+        [
+          "No entendí el monto",
+          "Perdón, no me quedó claro el monto 🤔. ¿Me lo repetís en números? Ej: \"gasté 15000 en nafta\".",
+        ],
+        [
+          "No entendí la categoría",
+          "¿En qué categoría lo anoto? Decime una (ej: nafta, hierro, sueldos, ventas…).",
+        ],
+        ["Anotado", "¡Listo, lo anoté! 📝"],
+        [
+          "Número no habilitado",
+          "Este número todavía no está habilitado para cargar movimientos. Pedile al dueño que lo dé de alta en el panel.",
+        ],
+      ];
+      iniciales.forEach(([e, t], i) => ins.run(e, t, i));
+    }
+  } catch {
+    // si falla la semilla no es crítico
+  }
 
   // Migraciones defensivas para bases que ya existían de una versión
   // anterior (mismo patrón que el POS): cada ALTER TABLE va en su try/catch

@@ -112,8 +112,25 @@ Se resuelven **siempre del lado del servidor** por `usuarios.rol`:
 - `alertas_config` — `id, tipo CHECK(limite_categoria|fijo_por_vencer|
   resumen_periodico|inactividad), parametros_json, usuario_id_destino →
   usuarios, activo, creado`. La forma de `parametros_json` según el tipo se
-  valida en `lib/alertas.ts`. La API ya existe; **el cron que dispara las
-  alertas llega en el paso 3**.
+  valida en `lib/alertas.ts`. `scripts/cron-alertas.js` la lee y encola
+  avisos.
+- **Puente del bot** (clonado del POS, `pedido_id` → `movimiento_id`; sin
+  `menu_imagenes`):
+  - `bot_conversaciones` — `jid PK, cliente, estado CHECK(activa|escalada|
+    finalizada), motivo_escalado, movimiento_id → movimientos, creado,
+    actualizado`.
+  - `bot_mensajes` — `id, jid, rol CHECK(cliente|bot|empleado), texto, creado`.
+  - `bot_whatsapp_estado` — fila única id=1: `pausado` (frena sólo la IA),
+    `conectado` + `qr` (los reporta el bot), `conectar` (prende/apaga la
+    conexión entera), `cambiar_numero_solicitado` (logout para vincular otro
+    número).
+  - `bot_comandos` — cola que el bot revisa cada 8 s. `tipo CHECK(mensaje|
+    manual|control|aviso)`, `intentos` (tope `MAX_INTENTOS=5`), `estado`,
+    `error`, `enviado`.
+  - `bot_respuestas_predeterminadas` — `id, etiqueta, texto, orden`
+    (semilla de 4). Únicos textos que se pueden mandar a mano (no hay caja
+    de texto libre).
+  - `bot_avisos_log` — `(clave, fecha) PK`: anti-duplicado del cron.
 
 ## API
 
@@ -152,9 +169,50 @@ Se resuelven **siempre del lado del servidor** por `usuarios.rol`:
   sólo `dueño`. `parametros` (objeto) se valida por tipo y se guarda como
   JSON en `parametros_json`.
 
+### `/api/bot-whatsapp/*` (puente con el bot)
+
+Autorización en `lib/bot-auth.ts` (`autorizarBridge`): un llamador es
+`comoDueno` (sesión de un dueño en el navegador) o `comoBot` (header
+`x-bot-token` == `process.env.BOT_TOKEN`; si `BOT_TOKEN` no está definido,
+cualquiera cuenta como bot — dev local, igual que el POS).
+
+- `GET/PUT /api/bot-whatsapp/estado` — dueño **o** bot.
+- `POST /api/bot-whatsapp/mensajes` — bot. Loguea un mensaje y upsertea
+  `bot_conversaciones` (acepta `estado`, `motivoEscalado`, `movimientoId`).
+- `GET/POST /api/bot-whatsapp/comandos`, `PUT .../comandos/[id]` — GET y PUT
+  son del bot; POST es dueño o bot (respuestas manuales del panel, avisos).
+- `GET /api/bot-whatsapp/conversaciones` (+ `[jid]` PUT/DELETE, `[jid]/mensajes`
+  GET) — sólo dueño. El PUT de estado encola además un comando `control`.
+- `GET/POST /api/bot-whatsapp/respuestas` (+ `[id]` PUT/DELETE) — sólo dueño.
+- `GET /api/bot-whatsapp/contexto?numero=` — bot. Devuelve `{ usuario, categorias }`
+  (usuario resuelto por `numero_whatsapp`, ver `lib/bot-numero.ts`: compara
+  por los últimos 8 dígitos).
+- `POST /api/bot-whatsapp/movimiento` — bot. Crea un movimiento con
+  `origen='whatsapp'` y el `usuario_id` de quien escribió. Empareja la
+  categoría por nombre (normalizado, con tolerancia). Si algo no se puede
+  resolver devuelve **422** con `motivo` (o 403 si el número no está
+  habilitado) para que el bot **escale** en vez de inventar.
+
 Validación compartida de movimientos en `lib/movimientos.ts`
 (`validarDatosMovimiento`, serializador con joins); constantes y fechas en
 `lib/movimientos-datos.ts`.
+
+## Bot de WhatsApp (`bot-whatsapp/`)
+
+Proceso Node **aparte**, con su propio `package.json` y `CLAUDE.md`/`README.md`.
+`node --env-file=.env index.js` (`npm start`). Baileys + `@anthropic-ai/sdk`.
+
+- No toca la base: todo por `/api/bot-whatsapp/*`.
+- Al recibir un mensaje: lo loguea, pide `contexto`, y si el que escribe está
+  habilitado y la IA (Haiku) devuelve `{esMovimiento, tipo, monto, categoria,
+  confianza}` con confianza ≥ `CONFIANZA_MINIMA` → `POST .../movimiento` y
+  confirma. Si falta el monto/categoría o la confianza es baja → **escala**
+  (marca `estado='escalada'`, no manda texto libre).
+- Cola de comandos cada 8 s; `control` (reactivar/bloquear la IA de una
+  conversación) se maneja con un `Set` en memoria.
+- Controles del panel cada 10 s (pausar, `conectar` on/off,
+  `cambiar_numero_solicitado`). Reporta conexión/QR a `PUT .../estado`.
+- `bot-whatsapp/auth/` (credenciales de sesión) y `.env` no se versionan.
 
 ## Plan por pasos
 
@@ -170,19 +228,20 @@ Validación compartida de movimientos en `lib/movimientos.ts`
      frecuencia), pausar/reactivar, "registrar", editar, anular
    - `/dinero/configuracion` (sólo dueño, con tabs) — categorías (alta/
      rename/activar/borrar), alertas y límites, usuarios
-3. **Bot de WhatsApp** (clon del de Steve's Burger, instancia nueva y
-   separada: otro número, otro proceso) con la IA reprogramada para
-   reconocer gastos/ingresos en lenguaje natural ("gasté 15000 en nafta",
-   "cobré 45000 de una venta") y armar el movimiento llamando a
-   `/api/movimientos`. Reusa tal cual `conversaciones`, `mensajes`,
-   `comandos` y `respuestas_predeterminadas`. Si la IA no entiende el monto
-   o la categoría: **no inventa** — marca la conversación como `escalada`,
-   llega el aviso al panel, y se responde con un mensaje predeterminado
-   (nunca texto libre). **Alertas automáticas**: tarea programada 1×/día que
-   revisa límites por categoría, fijos por vencer y resúmenes
-   semanal/mensual, e inserta en la cola `comandos` un tipo nuevo `aviso`
-   para que el bot lo mande en su próxima vuelta. El cron nunca le pega
-   directo a WhatsApp.
+3. **[hecho]** Bot de WhatsApp (`bot-whatsapp/`, proceso aparte, Baileys +
+   IA) que reconoce gastos/ingresos en lenguaje natural y los carga por
+   `/api/bot-whatsapp/movimiento`. Escala en vez de inventar. Panel en
+   `/dinero/bot`. **Alertas automáticas**: `scripts/cron-alertas.js`
+   (1×/día) revisa `alertas_config` y encola avisos (`bot_comandos.tipo =
+   'aviso'`); nunca le pega directo a WhatsApp. Anti-duplicado por día en
+   `bot_avisos_log`.
+
+   Pendiente de la persona: instalar deps del bot, cargar `ANTHROPIC_API_KEY`
+   (y `BOT_TOKEN` en los dos lados), vincular un número dedicado escaneando
+   el QR desde `/dinero/bot`, y programar el cron en el Programador de
+   tareas de Windows. El `index.js` del bot está escrito a la misma
+   arquitectura que el del POS pero NO se pudo probar contra WhatsApp real
+   desde acá — conviene diffear contra el `bot-whatsapp/index.js` del POS.
 
 ## Flujo con dos computadoras
 

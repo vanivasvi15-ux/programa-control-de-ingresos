@@ -22,6 +22,7 @@ const ITEMS: Item[] = [
   { href: "/dinero", label: "Panel", icono: "panel" },
   { href: "/dinero/movimientos", label: "Movimientos", icono: "movimientos" },
   { href: "/dinero/fijos", label: "Fijos", icono: "fijos" },
+  { href: "/dinero/bot", label: "WhatsApp", icono: "chat", soloDueno: true },
   { href: "/dinero/configuracion", label: "Configuración", icono: "config", soloDueno: true },
 ];
 

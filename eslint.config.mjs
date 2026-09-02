@@ -24,6 +24,9 @@ const eslintConfig = defineConfig([
     // Scripts sueltos de línea de comandos (Node puro con require()), se
     // corren con `node scripts/...`, no son parte del bundle de la app.
     "scripts/**",
+    // El bot de WhatsApp es un proyecto Node aparte, con su propio
+    // package.json y dependencias.
+    "bot-whatsapp/**",
   ]),
 ]);
 
