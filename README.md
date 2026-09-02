@@ -75,5 +75,8 @@ Si ponés `BOT_TOKEN` en `bot-whatsapp/.env`, poné el **mismo** valor en
     número, ver conversaciones y responder.
   - `scripts/cron-alertas.js` — se corre 1×/día; revisa `alertas_config` y
     encola avisos en la cola del bot (nunca le pega directo a WhatsApp).
+- [ ] **Fase 2** — stock, producción, tienda propia, integraciones con Mercado
+      Libre / Mercado Pago y chatbot de clientes. Planificación en
+      [docs/FASE-2.md](docs/FASE-2.md) (todavía sin empezar).
 
 Ver [CLAUDE.md](CLAUDE.md) para el detalle de arquitectura y el plan completo.

@@ -243,9 +243,24 @@ Proceso Node **aparte**, con su propio `package.json` y `CLAUDE.md`/`README.md`.
    arquitectura que el del POS pero NO se pudo probar contra WhatsApp real
    desde acá — conviene diffear contra el `bot-whatsapp/index.js` del POS.
 
+### Fase 2 (planificada, sin empezar)
+
+Stock + producción + tienda propia + integraciones con Mercado Libre y
+Mercado Pago + chatbot de clientes. Todo el detalle (modelo de datos de
+3 niveles insumo → producto base → producto final, regla de "kit completo",
+plan por pasos) está en **[docs/FASE-2.md](docs/FASE-2.md)**.
+
+## Datos cargados
+
+`data.db` arranca vacía. Para cargar los datos reales de agosto 2026
+(resúmenes de Mercado Pago de Viviana y Cristian): `node scripts/seed-datos.js
+--reset` (ver `scripts/seed-agosto-2026.json`). Usuarios `viviana` y
+`cristian`, ambos dueño, clave provisoria `vyv12345`. 624 movimientos.
+
 ## Flujo con dos computadoras
 
 - `git pull` al empezar, `git push` al terminar.
 - `npm install` si cambió `package.json`.
-- La base `data.db` NO se sincroniza: si hace falta un usuario en la otra
-  compu, correr de nuevo `node scripts/crear-usuario.js`.
+- La base `data.db` NO se sincroniza. Para tener los datos de agosto en la
+  otra compu: `node scripts/seed-datos.js --reset`. Para un usuario suelto:
+  `node scripts/crear-usuario.js`.
