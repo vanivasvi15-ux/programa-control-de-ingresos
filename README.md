@@ -31,6 +31,11 @@ La base `data.db` se crea sola al primer arranque y **no se sube a GitHub**
   usuario para `/login`. rol: `dueño` (default) | `encargado` | `contador`
 - `node scripts/cron-alertas.js` — revisa las alertas y encola avisos para el
   bot. Programalo 1×/día (Programador de tareas de Windows / cron).
+- `node scripts/seed-datos.js --reset` — **BORRA todos los datos** de `data.db`
+  y carga los de `scripts/seed-agosto-2026.json` (usuarios `viviana` y
+  `cristian`, clave provisoria `vyv12345`; 624 movimientos de agosto 2026
+  armados desde los resúmenes de Mercado Pago). Correlo en cada compu, porque
+  `data.db` no se sincroniza.
 
 ## Bot de WhatsApp
 

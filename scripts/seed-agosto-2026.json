@@ -1,0 +1,5059 @@
+{
+  "meta": {
+    "origen": "Resúmenes Mercado Pago agosto 2026 (Viviana Acosta + Cristian Vivas)",
+    "generado": "2026-09-02",
+    "movimientos": 624,
+    "ingresos_total": 30586890,
+    "gastos_total": 33881791,
+    "neto": -3294901,
+    "clave_provisoria": "vyv12345"
+  },
+  "usuarios": [
+    {
+      "nombre": "Viviana",
+      "nombre_usuario": "viviana",
+      "rol": "dueño"
+    },
+    {
+      "nombre": "Cristian",
+      "nombre_usuario": "cristian",
+      "rol": "dueño"
+    }
+  ],
+  "categorias": [
+    {
+      "nombre": "Bonificación de envío",
+      "tipo": "ingreso"
+    },
+    {
+      "nombre": "Compra",
+      "tipo": "gasto"
+    },
+    {
+      "nombre": "Devolución / Reintegro",
+      "tipo": "ingreso"
+    },
+    {
+      "nombre": "Débito / Retención Mercado Libre",
+      "tipo": "gasto"
+    },
+    {
+      "nombre": "Impuestos",
+      "tipo": "gasto"
+    },
+    {
+      "nombre": "Pago de servicios / compras",
+      "tipo": "gasto"
+    },
+    {
+      "nombre": "Rendimientos (intereses)",
+      "tipo": "ingreso"
+    },
+    {
+      "nombre": "Transferencia enviada",
+      "tipo": "gasto"
+    },
+    {
+      "nombre": "Transferencia recibida",
+      "tipo": "ingreso"
+    },
+    {
+      "nombre": "Venta / Liquidación Mercado Pago",
+      "tipo": "ingreso"
+    }
+  ],
+  "movimientos": [
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 29000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-01",
+      "nota": "Transferencia enviada Liyan Ye"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-02",
+      "nota": "Transferencia enviada Viviana Beatriz Acosta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 48720,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-02",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 26186,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-02",
+      "nota": "Pago Grupo 720"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 62000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-02",
+      "nota": "Débito por deuda/dinero retenido"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 9301,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-02",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-02",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 20000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-02",
+      "nota": "Transferencia enviada Marian Casales"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 30378,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago con QR YPF"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 13615,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-03",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 300000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-03",
+      "nota": "Transferencia enviada Vivas Cristian Alberto"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 60000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-03",
+      "nota": "Transferencia enviada Brenda Yesica Fiorentino"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 59000,
+      "categoria": "Compra",
+      "fecha": "2026-08-03",
+      "nota": "Compra Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 125000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-03",
+      "nota": "Transferencia enviada Silke Guillermo Dario"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1720815,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago de cuota Créditos de Mercado Pago"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 69000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-03",
+      "nota": "Débito por deuda/dinero retenido"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 20280,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-03",
+      "nota": "Devolución de dinero Envío cancelado a Gonzalo Martin Antunez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 48720,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-03",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 5600,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-03",
+      "nota": "Transferencia enviada Thiago"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 44000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-03",
+      "nota": "Débito por deuda/dinero retenido"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 15790,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-03",
+      "nota": "Devolución de dinero Envío cancelado a Greta Nahir Cerda Lopez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-03",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1054510,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-04",
+      "nota": "Débito por deuda Facturas vencidas de Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4079,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-04",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 45000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-04",
+      "nota": "Débito por deuda/dinero retenido"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 15985,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-04",
+      "nota": "Devolución de dinero Envío cancelado a Fernando Gabriel Ferreyra"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 54000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-04",
+      "nota": "Débito por deuda/dinero retenido"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8101,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-04",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 10300,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-04",
+      "nota": "Transferencia enviada Nancy Barragan"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 13219,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-04",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 13219,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-04",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 30568,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-04",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 16453,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-04",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-04",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 375000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-04",
+      "nota": "Transferencia enviada Tutuca"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-04",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 3607,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-05",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 21591,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-05",
+      "nota": "Pago Netflix.com"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 27741,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-05",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 27741,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-05",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 43500,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-05",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 15759,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-05",
+      "nota": "Devolución de dinero"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 27741,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-05",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 43500,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-05",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 15759,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-05",
+      "nota": "Devolución de dinero"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 27741,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-05",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-05",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-05",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-05",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 5200,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-05",
+      "nota": "Transferencia enviada Nancy Barragan"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-05",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 6490,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-05",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 80083,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-05",
+      "nota": "Transferencia enviada Dyg Combos florida"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 190000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-05",
+      "nota": "Transferencia enviada Fernandez Ignacio"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 3873,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-06",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 300000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-06",
+      "nota": "Transferencia enviada Acosta Viviana Beatriz"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-06",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 100000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-06",
+      "nota": "Transferencia enviada Viviana Beatriz Acosta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 3000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-06",
+      "nota": "Pago CEAMSE"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 8700,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-06",
+      "nota": "Transferencia enviada Nancy Barragan"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-06",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-06",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-06",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-06",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-06",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-06",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-06",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-06",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4128,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-07",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 33600,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-07",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 224460,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Jaquelina Pamela Nuss"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 119778,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-07",
+      "nota": "Pago con QR Gases y Soldaduras"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-07",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 75400,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Casa Any"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-07",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 20000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Casa Any"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 52954,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-07",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 19354,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-07",
+      "nota": "Devolución de dinero"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 139999,
+      "categoria": "Compra",
+      "fecha": "2026-08-07",
+      "nota": "Compra Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 200,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 114800,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Ro"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 249400,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Los toldos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 153000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada elfreduart"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 76500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 180000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Ivan Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 130000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Eve"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 200,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 17228,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-07",
+      "nota": "Transferencia enviada Natalia, rios"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-07",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 449,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-07",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 30842,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-08",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-08",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-08",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 2301,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-08",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 2301,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-08",
+      "nota": "Devolución de dinero Reintegro de comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 12,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-08",
+      "nota": "Devolución de pago de impuesto"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 3495,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-08",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1549,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-08",
+      "nota": "Pago RUTAS SUR ATLANTICO S.A. RUTAS SUR ATLANTICO S.A."
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-08",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-08",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 372500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-08",
+      "nota": "Transferencia enviada Vpack"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 35000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-08",
+      "nota": "Transferencia enviada Alfredo Omar Tello"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 45131,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-08",
+      "nota": "Transferencia enviada La Banda"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 20000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-08",
+      "nota": "Transferencia enviada Eve"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-08",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-08",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-08",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-08",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 22300,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-08",
+      "nota": "Pago con QR Carniceria el capricho"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 200,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-08",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 3851,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-09",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 29015,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-09",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-09",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-09",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 29000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-09",
+      "nota": "Transferencia enviada panadería el pala"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-09",
+      "nota": "Pago con QR La banda"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-09",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-09",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 49000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-09",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 17275,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-09",
+      "nota": "Devolución de dinero Envío cancelado a Miguel Bregant"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 65140,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-09",
+      "nota": "Pago con QR Carniceria y Granja El Capricho"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 19000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-09",
+      "nota": "Transferencia enviada Yueqin Chen"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 54000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-09",
+      "nota": "Transferencia enviada Eve"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 3995,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-09",
+      "nota": "Transferencia recibida Giuliana Maylen Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 3995,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-09",
+      "nota": "Transferencia recibida Giuliana Maylen Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 49000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-09",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 7350,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-09",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-09",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 11822,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-10",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 72000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-10",
+      "nota": "Transferencia enviada Brenda Yesica Fiorentino"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 139999,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-10",
+      "nota": "Devolución de dinero Compra protegida"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 8700,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-10",
+      "nota": "Transferencia enviada Nancy Barragan"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 900000,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-10",
+      "nota": "Transferencia recibida Steves Burger"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 51600,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-10",
+      "nota": "Transferencia enviada Perez Emiliano Gaston"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 18380,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-10",
+      "nota": "Débito por deuda Envío de Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 6000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-10",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 2149,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-10",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 3851,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-10",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 45000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-10",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 6795,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-10",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 29015,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-10",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 7000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-10",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 2308,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-10",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 84000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-10",
+      "nota": "Pago con QR Extragas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 150000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-10",
+      "nota": "Transferencia enviada Acosta Viviana Be"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4592,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-11",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 100000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-11",
+      "nota": "Transferencia enviada Acosta Viviana Be"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 304743,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-11",
+      "nota": "Transferencia enviada Distribuidora ENZO"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 117000,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-11",
+      "nota": "Transferencia enviada Distribuidora ENZO"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 24935,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-11",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 50000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-11",
+      "nota": "Transferencia enviada Vivas Cristian Alberto"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 67500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-11",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-11",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-11",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-11",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 99040,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-11",
+      "nota": "Pago con QR SANCHEZ Y BURGUEÑO GEMA S.R.L."
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-11",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-11",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-11",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4503,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-12",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 29148,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-12",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 150000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-12",
+      "nota": "Transferencia enviada Viviana Beatriz Acosta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 150000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-12",
+      "nota": "Transferencia enviada Acosta Viviana Beatriz"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 301868,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-12",
+      "nota": "Transferencia enviada Siri Gabriel Pa"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 22132,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-12",
+      "nota": "Transferencia enviada Fernando Nicolas Oyarbide"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-12",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-12",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-12",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-12",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 232000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-12",
+      "nota": "Transferencia enviada Los toldos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 200000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-12",
+      "nota": "Transferencia enviada Viviana Beatriz Acosta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-12",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-12",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-12",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-12",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-12",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4770,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-13",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 375000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-13",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 53900,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-13",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 426900,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-13",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 7000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-13",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 33069,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-13",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 33069,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-13",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 40000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-13",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 6000,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-13",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-13",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 72000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-13",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-13",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-13",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 675140,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-13",
+      "nota": "Transferencia enviada Victoria Pol"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 200,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-13",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-13",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-13",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-13",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 7990,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-13",
+      "nota": "Transferencia recibida"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-13",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 283279,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago Coto"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4338,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-14",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 106000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 37150,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-14",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 5573,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-14",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 2400,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 92800,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 130000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 5500,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago con QR Super conquista"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada Viviana Beatriz Acosta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 120600,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada Rocio Jazmin Bohiler"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 30568,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 211000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada Ivan Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 31500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-14",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-14",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 5563,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago Coto"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-14",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-14",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-14",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-14",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 39000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-15",
+      "nota": "Transferencia enviada Nando Fiat"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 160000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-15",
+      "nota": "Transferencia enviada Cesar Dario Medrano"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-15",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 80000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-15",
+      "nota": "Transferencia enviada Nando Fiat"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 48200,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-15",
+      "nota": "Pago con QR Carniceria el capricho"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 649,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 649,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 649,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-15",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-16",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 30000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-16",
+      "nota": "Transferencia enviada Evelyn Agustina Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 60000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-17",
+      "nota": "Transferencia enviada Brenda Yesica Fiorentino"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 11500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-17",
+      "nota": "Transferencia enviada Nancy Barragan"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-17",
+      "nota": "Transferencia enviada Freddy Jancko Mamani"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-17",
+      "nota": "Transferencia enviada Fredy Rolando Medina Gonzalez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 52000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-17",
+      "nota": "Transferencia enviada Ivan Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-17",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-17",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 17542,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-18",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 3000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-18",
+      "nota": "Pago CEAMSE"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-18",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-18",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 160620,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-18",
+      "nota": "Transferencia enviada frigorificolh"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 43000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-18",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 6450,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-18",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 10130,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-18",
+      "nota": "Pago con QR DA SILVA LACO HNOS SRL"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 69966,
+      "categoria": "Compra",
+      "fecha": "2026-08-18",
+      "nota": "Compra Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-18",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-18",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 100000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-18",
+      "nota": "Transferencia enviada Nancy Anabel Bravo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 40000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-18",
+      "nota": "Transferencia enviada Marian Solange Casales"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 21342,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-18",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 21342,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-18",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-18",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 649,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 649,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-18",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 51956,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-19",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 23302,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-19",
+      "nota": "Devolución de dinero Envío cancelado a Paulo Donato Retamar"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4583,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-19",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 16453,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 16453,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 8555,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago con QR NATALIA RIOS"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 16453,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15957,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-19",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-19",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-19",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 106352,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago con QR YPF"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-19",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 535113,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-19",
+      "nota": "Transferencia enviada Jorge Ignacio Baratta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-19",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-19",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-19",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-19",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-19",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-19",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 326000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-19",
+      "nota": "Transferencia enviada Marcos Eduardo Nunez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15825,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-19",
+      "nota": "Pago con QR La banda"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 100000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-19",
+      "nota": "Transferencia enviada Nancy Anabel Bravo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 5123,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-20",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 181884,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-20",
+      "nota": "Transferencia enviada Metal Rodriguez Productos Ferr"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 84000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-20",
+      "nota": "Pago con QR Extragas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 84000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-20",
+      "nota": "Pago con QR Extragas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 21500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-20",
+      "nota": "Transferencia enviada Holima Hernan Lucas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-20",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-20",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 66840,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-20",
+      "nota": "Pago con QR FARMACIA IN DRM"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15400,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-20",
+      "nota": "Transferencia enviada Nancy Barragan"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 13219,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-20",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 42500,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-20",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-20",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-20",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 50000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-20",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 7500,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-20",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-20",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 42500,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-20",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-20",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-20",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-20",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-20",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-20",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-20",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 50218,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-20",
+      "nota": "Pago con QR Arma Tu Fiesta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 2500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-20",
+      "nota": "Transferencia enviada Thiago"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4920,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-21",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 17850,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-21",
+      "nota": "Pago con QR FARMACIA IN DRM"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 17000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Marcelo Javier Carnevale"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 79481,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Metal Rodriguez Productos Ferr"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 30000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-21",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 7530,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-21",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 30000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-21",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 7530,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-21",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 22017,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-21",
+      "nota": "Pago con QR YPF"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 6300,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Nancy Barragan"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 116000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Nancy Anabel Bravo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 72000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Fredy Rolando Medina Gonzalez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 54086,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-21",
+      "nota": "Pago con QR Bebidas Gral Rodriguez Srl"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 176900,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Los toldos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 145000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Rocio Jazmin Bohiler"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 208000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Ivan Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 104000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-21",
+      "nota": "Transferencia enviada Evelyn Agustina Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-21",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 200,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-21",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-21",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-21",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-21",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-21",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 17996,
+      "categoria": "Compra",
+      "fecha": "2026-08-22",
+      "nota": "Compra Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 16000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-22",
+      "nota": "Transferencia enviada Walter Daniel Palavecino"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 40000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-22",
+      "nota": "Transferencia enviada Viviana Beatriz Acosta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 32500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-22",
+      "nota": "Transferencia enviada Ivan Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 40000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-22",
+      "nota": "Transferencia enviada Ivan Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-22",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-22",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-22",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-22",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 30000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-22",
+      "nota": "Transferencia enviada Viviana Beatriz Acosta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-22",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 45000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-22",
+      "nota": "Transferencia enviada German Horacio Cornacchioli"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-22",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-22",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-22",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 20000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-23",
+      "nota": "Transferencia enviada Evelyn Agustina Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-23",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 63920,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-23",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 11281,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-23",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 11281,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-23",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 13549,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-24",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 411239,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-24",
+      "nota": "Pago Tarjeta de crédito"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 59216,
+      "categoria": "Compra",
+      "fecha": "2026-08-24",
+      "nota": "Compra Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-24",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 72000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-24",
+      "nota": "Transferencia enviada Brenda Yesica Fiorentino"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 12000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-24",
+      "nota": "Transferencia enviada Brenda Yesica Fiorentino"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 27480,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-24",
+      "nota": "Pago con QR Supermercados DIA"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 20000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-24",
+      "nota": "Transferencia enviada Marian Solange Casales"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 85472,
+      "categoria": "Compra",
+      "fecha": "2026-08-24",
+      "nota": "Compra Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 45000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-24",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 9000,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-24",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 36000,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-24",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 14000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-24",
+      "nota": "Transferencia enviada Nancy Barragan"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 8000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-24",
+      "nota": "Pago con QR La banda"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 20990,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-24",
+      "nota": "Pago de suscripción Meli+"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 36000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-24",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 80082,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-24",
+      "nota": "Transferencia enviada Dyg Combos florida"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 55000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-24",
+      "nota": "Transferencia enviada Anibal Jose Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4414,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-25",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 90000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-25",
+      "nota": "Transferencia enviada German Horacio Cornacchioli"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 43200,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-25",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 6480,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-25",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 84000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-25",
+      "nota": "Pago con QR Extragas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 24935,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-25",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 19724,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-25",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 6667,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-25",
+      "nota": "Transferencia enviada Nisi Lucas Ezeq"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 5000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-25",
+      "nota": "Transferencia enviada Evelyn Agustina Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4237,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-26",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-26",
+      "nota": "Transferencia enviada Ivan Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 24935,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-26",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 39778,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-26",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 105562,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-26",
+      "nota": "Pago de servicio ARCA"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 326000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-26",
+      "nota": "Transferencia enviada Bryan Andres Quinteros"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 449,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-26",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-26",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-26",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4109,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-27",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 42600,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-27",
+      "nota": "Transferencia enviada Yueqin Chen"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 31500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-27",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 59000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-27",
+      "nota": "Transferencia enviada Fredy Rolando Medina Gonzalez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 8690,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-27",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 39900,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-27",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 5985,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-27",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 650000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-27",
+      "nota": "Transferencia enviada Viviana Beatriz Acosta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4622,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-28",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 171187,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Metal Rodriguez Productos Ferr"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 125000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Baron Patricia"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 37500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Silke Marcia Paola"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 29976,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-28",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 200462,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Jorge Ignacio Baratta"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 224460,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Jaquelina Pamela Nuss"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 98600,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Nancy Anabel Bravo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 223119,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Andrea Natalia Irrazabal"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-28",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 10005,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-28",
+      "nota": "Pago MiCorreo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 232000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Los toldos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 67500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Arnaldo Ramon Alvarez Alvarez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 260000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Ivan Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 110500,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Evelyn Agustina Vivas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 88700,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-28",
+      "nota": "Transferencia enviada Rocio Jazmin Bohiler"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-28",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-28",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 1193,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-28",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-28",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-28",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-28",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 649,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-28",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-28",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 100000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-29",
+      "nota": "Transferencia enviada Gabriel Alejandro Ruiz"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 15950,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-29",
+      "nota": "Transferencia enviada Ayda Apaza Mendez"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 49306,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-29",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 23250,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-29",
+      "nota": "Devolución de dinero Envío cancelado a Pablo Alberto Baptista"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 869,
+      "categoria": "Bonificación de envío",
+      "fecha": "2026-08-29",
+      "nota": "Bonificación por envío Mercado Envíos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 11494,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-30",
+      "nota": "Pago de impuesto Impuesto a los IIBB de Bs. As."
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 7662,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-30",
+      "nota": "Pago de impuesto Impuesto a los IIBB de CABA"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 5747,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-30",
+      "nota": "Pago de impuesto Impuesto a los IIBB de Tucumán"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 22987,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-30",
+      "nota": "Pago de impuesto Impuesto al Valor Agregado Régimen General"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 133900,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-30",
+      "nota": "Transferencia enviada Distribuidora ENZO"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 20000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-30",
+      "nota": "Pago con QR YPF"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-30",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1390000,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia recibida Steves Burger"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 12182,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-31",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 5180880,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia enviada J Gomez Srl"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 5000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia enviada Gimena Daniela Bais Bacigalupo"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 375000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia enviada Ruben Dario Cardenas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 119000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia enviada Roma"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 21643,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia enviada Metal Rodriguez Productos Ferr"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 70000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia enviada Brenda Yesica Fiorentino"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 84000,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-31",
+      "nota": "Pago con QR Extragas"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 35000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia enviada Romina Elizabet Ferreira"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "gasto",
+      "monto": 994,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-31",
+      "nota": "Pago AU Oeste"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 783738,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-01",
+      "nota": "Ventas Mercado Pago — 29 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 734792,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-02",
+      "nota": "Ventas Mercado Pago — 18 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 28210,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-03",
+      "nota": "Ventas Mercado Pago — 1 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 513312,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-04",
+      "nota": "Ventas Mercado Pago — 15 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 894308,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-05",
+      "nota": "Ventas Mercado Pago — 30 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1178573,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-06",
+      "nota": "Ventas Mercado Pago — 34 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1086355,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-07",
+      "nota": "Ventas Mercado Pago — 40 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 685715,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-08",
+      "nota": "Ventas Mercado Pago — 21 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 459721,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-09",
+      "nota": "Ventas Mercado Pago — 14 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 4692,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-10",
+      "nota": "Ventas Mercado Pago — 1 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 918892,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-11",
+      "nota": "Ventas Mercado Pago — 29 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1162676,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-12",
+      "nota": "Ventas Mercado Pago — 42 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 679328,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-13",
+      "nota": "Ventas Mercado Pago — 22 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 844061,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-14",
+      "nota": "Ventas Mercado Pago — 26 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 626306,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-15",
+      "nota": "Ventas Mercado Pago — 18 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 27450,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-16",
+      "nota": "Ventas Mercado Pago — 1 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 982262,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-18",
+      "nota": "Ventas Mercado Pago — 27 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1023865,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-19",
+      "nota": "Ventas Mercado Pago — 26 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1010813,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-20",
+      "nota": "Ventas Mercado Pago — 28 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 561271,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-21",
+      "nota": "Ventas Mercado Pago — 16 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 540437,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-22",
+      "nota": "Ventas Mercado Pago — 15 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 242740,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-23",
+      "nota": "Ventas Mercado Pago — 7 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 76819,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-25",
+      "nota": "Ventas Mercado Pago — 2 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 537856,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-26",
+      "nota": "Ventas Mercado Pago — 18 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1421692,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-27",
+      "nota": "Ventas Mercado Pago — 41 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1098504,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-28",
+      "nota": "Ventas Mercado Pago — 37 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 1231035,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-29",
+      "nota": "Ventas Mercado Pago — 35 liquidaciones"
+    },
+    {
+      "usuario": "viviana",
+      "tipo": "ingreso",
+      "monto": 362077,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-30",
+      "nota": "Ventas Mercado Pago — 6 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 642,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-03",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 1000000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-03",
+      "nota": "Transferencia enviada Vivas Cristian Alberto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 369667,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-04",
+      "nota": "Transferencia recibida Steves Burger"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 368992,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-04",
+      "nota": "Pago Www.cotodigital.com.ar"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 3,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-04",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 106,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-05",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 46059,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-05",
+      "nota": "Débito por deuda/dinero retenido"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 26113,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-05",
+      "nota": "Débito por deuda/dinero retenido"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 36895,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-05",
+      "nota": "Débito por deuda/dinero retenido"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 2692202,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-05",
+      "nota": "Transferencia enviada Metalurgica Ruedamas Srl"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 34968,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-05",
+      "nota": "Transferencia recibida Deco trident"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 132,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-06",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 100000,
+      "categoria": "Transferencia enviada",
+      "fecha": "2026-08-06",
+      "nota": "Transferencia enviada Vivas Cristian Alberto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 1765,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-07",
+      "nota": "Pago de impuesto Impuesto a los IIBB de Tucumán"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 1459,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-07",
+      "nota": "Pago de impuesto Impuesto a los IIBB de Corrientes"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 5836,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-07",
+      "nota": "Pago de impuesto Impuesto a los IIBB de CABA"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 1945,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-07",
+      "nota": "Pago de impuesto Impuesto a los IIBB de Neuquén"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 5836,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-07",
+      "nota": "Débito por deuda Impuesto al Valor Agregado Régimen General"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 584,
+      "categoria": "Impuestos",
+      "fecha": "2026-08-07",
+      "nota": "Pago de impuesto Impuesto a los IIBB de Bs. As."
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 84,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-07",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 5006,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-07",
+      "nota": "Devolución de pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 299730,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-09",
+      "nota": "Transferencia recibida Steves Burger"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 323872,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-09",
+      "nota": "Pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 233,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-10",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 45989,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-10",
+      "nota": "Dinero retenido Reclamos y devoluciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 42,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-11",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 85230,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-12",
+      "nota": "Débito por deuda Facturas vencidas de Mercado Libre"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 43,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-12",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 43,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-12",
+      "nota": "Débito por deuda Facturas vencidas de Mercado Libre"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 26174,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-12",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 15826,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-12",
+      "nota": "Devolución de dinero Reintegro de impuestos y comisiones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 15826,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-12",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 426516,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-13",
+      "nota": "Transferencia recibida"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 426516,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-13",
+      "nota": "Débito por deuda Facturas vencidas de Mercado Libre"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 8651,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-13",
+      "nota": "Devolución de pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 305,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-13",
+      "nota": "Débito por deuda Facturas vencidas de Mercado Libre"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 4,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-14",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 18,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-18",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 18,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-19",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 19,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-20",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 154,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-21",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 3490,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-21",
+      "nota": "Pago de suscripción Meli+"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 269757,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-23",
+      "nota": "Transferencia recibida Steves Burger"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 270770,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-23",
+      "nota": "Pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 742,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-24",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 45989,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-24",
+      "nota": "Devolución de dinero Reclamos y devoluciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 8676,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-24",
+      "nota": "Pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 380,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-25",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 377,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-26",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 270770,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-26",
+      "nota": "Pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 75402,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-26",
+      "nota": "Pago de servicio ARCA"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 362,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-27",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 447,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-28",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 197477,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-28",
+      "nota": "Pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 187024,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-28",
+      "nota": "Pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 12202,
+      "categoria": "Pago de servicios / compras",
+      "fecha": "2026-08-28",
+      "nota": "Pago de servicio Edenor"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 70534,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-29",
+      "nota": "Devolución de pago Coto"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 15826,
+      "categoria": "Devolución / Reintegro",
+      "fecha": "2026-08-30",
+      "nota": "Devolución de dinero Envío cancelado a Javier Caffarena"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "gasto",
+      "monto": 42000,
+      "categoria": "Débito / Retención Mercado Libre",
+      "fecha": "2026-08-30",
+      "nota": "Débito por deuda Devoluciones y reclamos en Mercado Libre"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 892,
+      "categoria": "Rendimientos (intereses)",
+      "fecha": "2026-08-31",
+      "nota": "Rendimientos"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 435608,
+      "categoria": "Transferencia recibida",
+      "fecha": "2026-08-31",
+      "nota": "Transferencia recibida CARLOS ERNESTO RODRIGUEZ"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 564674,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-01",
+      "nota": "Ventas Mercado Pago — 13 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 35049,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-02",
+      "nota": "Ventas Mercado Pago — 1 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 209010,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-04",
+      "nota": "Ventas Mercado Pago — 8 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 2816773,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-05",
+      "nota": "Ventas Mercado Pago — 79 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 26174,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-12",
+      "nota": "Ventas Mercado Pago — 1 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 26054,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-15",
+      "nota": "Ventas Mercado Pago — 1 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 248066,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-20",
+      "nota": "Ventas Mercado Pago — 6 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 187897,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-21",
+      "nota": "Ventas Mercado Pago — 5 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 215474,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-22",
+      "nota": "Ventas Mercado Pago — 7 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 323015,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-26",
+      "nota": "Ventas Mercado Pago — 9 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 171929,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-27",
+      "nota": "Ventas Mercado Pago — 4 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 104814,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-28",
+      "nota": "Ventas Mercado Pago — 4 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 102706,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-29",
+      "nota": "Ventas Mercado Pago — 7 liquidaciones"
+    },
+    {
+      "usuario": "cristian",
+      "tipo": "ingreso",
+      "monto": 296130,
+      "categoria": "Venta / Liquidación Mercado Pago",
+      "fecha": "2026-08-30",
+      "nota": "Ventas Mercado Pago — 2 liquidaciones"
+    }
+  ]
+}
