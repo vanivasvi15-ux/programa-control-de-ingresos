@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "crear-usuario": "node scripts/crear-usuario.js"
+    "test": "node --test \"**/*.test.ts\"",
+    "crear-usuario": "node scripts/crear-usuario.js",
+    "seed-stock": "node scripts/seed-stock.js"
   },
   "dependencies": {
     "next": "16.1.6",

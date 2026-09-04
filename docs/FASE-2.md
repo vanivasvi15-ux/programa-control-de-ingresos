@@ -147,12 +147,19 @@ cola de comandos, escala cuando no sabe, respuestas predeterminadas).
 
 ## Plan por pasos (a refinar con las referencias del dueño)
 
-1. **Datos + API** de catálogo y stock: `insumos`, `productos_base`,
-   `productos`, `receta_base`, `composicion_producto`,
-   `ordenes_produccion`, `movimientos_stock`. Sin tocar tienda ni bot.
-2. **Panel de stock y producción** (`/stock`): ver stock, cargar compras de
-   insumos (que generan un gasto), órdenes de producción, costo calculado
-   por producto, alertas de stock bajo.
+1. **[hecho] Datos + API** de catálogo y stock: `insumos`, `productos_base`,
+   `productos`, `publicaciones`, `receta_base`, `composicion_producto`,
+   `ordenes_produccion`, `movimientos_stock`, `compras_insumo`,
+   `recuento_listas`. Sin tocar tienda ni bot. Ver
+   [FASE-2-PASO-1.md](FASE-2-PASO-1.md).
+2. **[hecho] Panel de stock y producción** (`/stock`, sección "Taller"):
+   resumen con valor de stock / bajo mínimo / costos y márgenes, ABM de
+   insumos, piezas con editor de receta, productos con composición y
+   publicaciones, órdenes de producción (fabricar = descuenta insumos y suma
+   piezas, o avisa qué falta), compras de material, listas de recuento con
+   carga de conteo, e historial de stock.
+   *Pendiente del Paso 2*: que la compra genere el `gasto` en el Control de
+   Caja, y el aviso automático del recuento (cron).
 3. **Tienda pública + pedidos**: catálogo público, carrito, checkout; cola
    de pedidos (tienda + manual); pantalla de preparación con "listo /
    faltan piezas" + descuento de stock al enviar + generación del ingreso.
@@ -163,3 +170,58 @@ cola de comandos, escala cuando no sabe, respuestas predeterminadas).
 6. **Chatbot** de clientes + preguntas de ML con base de conocimiento.
 
 Cada paso con confirmación entre medio, como en la Fase 1.
+
+El detalle del **Paso 1** está en [FASE-2-PASO-1.md](FASE-2-PASO-1.md).
+
+---
+
+## Módulos adicionales pedidos por el dueño
+
+Surgieron al planificar el Paso 1. No cambian los pasos 1–6; se suman
+después, cada uno como su propio paso con confirmación.
+
+### A. Producción / tareas
+
+- La cola de pedidos (Paso 3) genera una **lista de tareas de fabricación**:
+  qué piezas faltan para completar los pedidos, ordenadas por urgencia.
+- **Áreas de trabajo** (corte, soldadura, armado, despacho…). Cada
+  empleado tiene un área y ve las tareas de lo suyo: qué falta y qué hay
+  que hacer según lo que se vendió.
+- **Pantallas por sector**: cada encargado tiene una pantalla de inicio
+  para su sector — hoy son **Producción** y **Embalaje**. Todos pueden
+  entrar a todo el sistema; la pantalla de sector es solo el atajo a lo que
+  cada uno usa siempre.
+- Un empleado **toma** una tarea, la marca terminada, y eso alimenta una
+  orden de producción y el descuento de stock.
+
+### B. Sugerencia de producción (IA)
+
+- Con el historial de ventas + el stock actual + los pedidos abiertos, la
+  IA (la misma que ya usa el bot) arma una **lista sugerida de qué
+  fabricar** para adelantarse a la demanda, no solo reaccionar a los
+  pedidos.
+
+### C. Personal
+
+- **Fichadas**: hora de entrada y de salida de cada empleado.
+- **Horas / minutos trabajados** por período → base para la liquidación.
+- Tareas tomadas y **rendimiento** por empleado (tiempo real vs. estimado).
+- **Liquidación de sueldos**: calcula lo a pagar y lo registra como un
+  `gasto` en el Control de Caja (mismo enganche que las compras de insumo).
+
+### D. Instructivos de fabricación
+
+- Un **manual por pieza** (`producto_base`): medidas de cada corte, dónde
+  doblar, dónde y de qué medida agujerear, en qué orden, con fotos o
+  diagramas.
+- Extiende la receta: los pasos del instructivo son la fuente de las
+  cantidades de material.
+- Sirve para entrenar gente nueva y para que las tareas del módulo A
+  tengan las instrucciones al lado.
+
+### E. Recuento periódico de stock
+
+- Para los consumibles difíciles de medir (gas, discos, alambre): listas
+  que el sistema recuerda revisar cada N días. El dueño/encargado carga el
+  stock actual a mano y queda registrado.
+- Las tablas entran ya en el Paso 1; el aviso y la pantalla, en el Paso 2.

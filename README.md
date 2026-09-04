@@ -36,6 +36,10 @@ La base `data.db` se crea sola al primer arranque y **no se sube a GitHub**
   `cristian`, clave provisoria `vyv12345`; 624 movimientos de agosto 2026
   armados desde los resúmenes de Mercado Pago). Correlo en cada compu, porque
   `data.db` no se sincroniza.
+- `node scripts/seed-stock.js --reset` — datos de PRUEBA de la Fase 2 (stock):
+  insumos, piezas, dos kits, publicaciones y una lista de recuento. No toca
+  nada de la Fase 1.
+- `npm test` — tests de los cálculos puros de stock (Node `--test`).
 
 ## Bot de WhatsApp
 
@@ -75,8 +79,16 @@ Si ponés `BOT_TOKEN` en `bot-whatsapp/.env`, poné el **mismo** valor en
     número, ver conversaciones y responder.
   - `scripts/cron-alertas.js` — se corre 1×/día; revisa `alertas_config` y
     encola avisos en la cola del bot (nunca le pega directo a WhatsApp).
-- [ ] **Fase 2** — stock, producción, tienda propia, integraciones con Mercado
-      Libre / Mercado Pago y chatbot de clientes. Planificación en
-      [docs/FASE-2.md](docs/FASE-2.md) (todavía sin empezar).
+- [x] **Fase 2 · Paso 1** — datos + API de stock y producción: insumos, piezas
+      fabricadas, productos, publicaciones, recetas, composición, órdenes de
+      producción, historial de stock, compras y recuentos. Mecanismo de
+      migraciones y helper `transaccion()`. Detalle en
+      [docs/FASE-2-PASO-1.md](docs/FASE-2-PASO-1.md).
+- [x] **Fase 2 · Paso 2** — panel `/stock` (sección "Taller" de la barra
+      lateral): resumen, insumos, piezas + receta, productos + composición +
+      publicaciones, producción, compras, recuentos, historial.
+- [ ] **Fase 2 · Pasos 3–6** — tienda propia, Mercado Libre, Mercado Pago,
+      chatbot de clientes, y los módulos A–E (producción/tareas, personal,
+      instructivos…). Todo en [docs/FASE-2.md](docs/FASE-2.md).
 
 Ver [CLAUDE.md](CLAUDE.md) para el detalle de arquitectura y el plan completo.

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { db, transaccion } from "@/lib/db";
 import { usuarioActual } from "@/lib/auth";
 import {
   avanzarFecha,
@@ -76,30 +76,30 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
 
   const nuevaProxima = avanzarFecha(fijo.proxima_fecha, fijo.frecuencia);
 
-  db.exec("BEGIN");
   try {
-    const resultado = db
-      .prepare(
-        `INSERT INTO movimientos
-           (tipo, monto, categoria_id, fecha, recurrencia, proxima_fecha, frecuencia,
-            generado_por_fijo_id, origen, usuario_id, estado, nota)
-         VALUES (?, ?, ?, ?, 'unico', NULL, NULL, ?, 'panel', ?, 'activo', ?)`
-      )
-      .run(fijo.tipo, monto, fijo.categoria_id, fecha, fijo.id, usuario.id, nota);
+    const nuevoId = transaccion(() => {
+      const resultado = db
+        .prepare(
+          `INSERT INTO movimientos
+             (tipo, monto, categoria_id, fecha, recurrencia, proxima_fecha, frecuencia,
+              generado_por_fijo_id, origen, usuario_id, estado, nota)
+           VALUES (?, ?, ?, ?, 'unico', NULL, NULL, ?, 'panel', ?, 'activo', ?)`
+        )
+        .run(fijo.tipo, monto, fijo.categoria_id, fecha, fijo.id, usuario.id, nota);
 
-    db.prepare(
-      `UPDATE movimientos SET proxima_fecha = ?, actualizado = datetime('now', 'localtime') WHERE id = ?`
-    ).run(nuevaProxima, fijo.id);
+      db.prepare(
+        `UPDATE movimientos SET proxima_fecha = ?, actualizado = datetime('now', 'localtime') WHERE id = ?`
+      ).run(nuevaProxima, fijo.id);
 
-    db.exec("COMMIT");
+      return Number(resultado.lastInsertRowid);
+    });
 
-    const creado = obtenerMovimiento(Number(resultado.lastInsertRowid))!;
+    const creado = obtenerMovimiento(nuevoId)!;
     return NextResponse.json(
       { movimiento: serializarMovimiento(creado), proximaFecha: nuevaProxima },
       { status: 201 }
     );
   } catch {
-    db.exec("ROLLBACK");
     return NextResponse.json({ error: "No se pudo registrar el fijo" }, { status: 500 });
   }
 }

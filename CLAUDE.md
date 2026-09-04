@@ -243,12 +243,40 @@ Proceso Node **aparte**, con su propio `package.json` y `CLAUDE.md`/`README.md`.
    arquitectura que el del POS pero NO se pudo probar contra WhatsApp real
    desde acá — conviene diffear contra el `bot-whatsapp/index.js` del POS.
 
-### Fase 2 (planificada, sin empezar)
+### Fase 2 — Stock y producción (Pasos 1 y 2 hechos)
 
 Stock + producción + tienda propia + integraciones con Mercado Libre y
-Mercado Pago + chatbot de clientes. Todo el detalle (modelo de datos de
-3 niveles insumo → producto base → producto final, regla de "kit completo",
-plan por pasos) está en **[docs/FASE-2.md](docs/FASE-2.md)**.
+Mercado Pago + chatbot de clientes. Modelo de datos de 3 niveles
+(insumo → producto base → producto final), regla de "kit completo", plan
+por pasos: **[docs/FASE-2.md](docs/FASE-2.md)** y **[docs/FASE-2-PASO-1.md](docs/FASE-2-PASO-1.md)**.
+
+- **[hecho] Paso 1 — datos + API**: tablas `config`, `insumos`,
+  `productos_base`, `productos`, `publicaciones`, `receta_base`,
+  `composicion_producto`, `ordenes_produccion`, `movimientos_stock`,
+  `compras_insumo`, `recuento_listas`/`recuento_items` en `lib/db.ts`
+  (todas `CREATE TABLE IF NOT EXISTS`). Nuevo mecanismo de migraciones
+  (`migraciones_aplicadas` + array `MIGRACIONES`, errores que se propagan)
+  y `export function transaccion()`. Rutas bajo `app/api/` (insumos,
+  productos-base + `/receta`, productos + `/composicion` + `/faltantes` +
+  `/desde-pieza`, publicaciones, ordenes-produccion, compras-insumo,
+  recuento-listas + `/responder`, movimientos-stock, stock/costos +
+  `/recalcular`, stock/resumen). Cálculos puros en `lib/stock-datos.ts`
+  (costeo hacia arriba, `faltantesDeProducto`), acceso a base en
+  `lib/stock.ts`. Regla: los que importan `@/lib/db` son sólo de servidor.
+  Tests: `npm test` (Node `--test`, `lib/stock-datos.test.ts`).
+- **[hecho] Paso 2 — panel `/stock`**: `app/stock/layout.tsx` (misma
+  protección que `/dinero`), páginas `resumen`, `insumos`, `piezas`
+  (con editor de receta), `productos` (composición + publicaciones),
+  `produccion`, `compras`, `recuentos`, `movimientos`. Componentes en
+  `components/stock/`. La barra lateral (`components/Sidebar.tsx`) ahora
+  tiene secciones **Caja** y **Taller**.
+- **Pendiente**: enganche compra → `gasto` en el Control de Caja; el aviso
+  automático del recuento (cron); Pasos 3–6 (tienda, ML, MP, chatbot) y
+  módulos A–E de FASE-2.md.
+
+Datos de prueba: `node scripts/seed-stock.js --reset` (`npm run seed-stock`).
+Precios de metal aproximados de una lista mayorista real; recetas y
+herrajes inventados.
 
 ## Datos cargados
 
