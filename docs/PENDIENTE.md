@@ -62,6 +62,16 @@ antes de poder programarlos:
     una vez por cuenta) para obtener los tokens de acceso.
   - Decidir la regla de stock cuando una pieza está en varias
     publicaciones / dos cuentas a la vez.
+- **Análisis ya hecho** de dos exports reales de ML (04-09-2026, 181
+  publicaciones): ver `docs/mercadolibre/README.md` (con los archivos
+  originales al lado). Conclusión: el mismo producto está publicado varias
+  veces con títulos distintos (SEO), así que 181 avisos ≈ 50-70 productos
+  reales — no se puede importar 1 a 1. **Falta que el dueño elija** una de
+  las 4 opciones planteadas ahí (A: importar todo con productos borrador a
+  limpiar después · B: sólo los ~24 con precio/stock completos · C:
+  reexportar "Publicaciones" sin filtro de categoría y ahí sí importar todo
+  · D: esperar a la integración por API de arriba). Ninguna se ejecutó
+  todavía.
 
 ### Paso 5 — Mercado Pago
 - Registrar los cobros como ingresos en el Control de Caja automáticamente.
