@@ -9,6 +9,37 @@ API y panel `/stock` del taller). Ver `CLAUDE.md` y `README.md`.
 
 ---
 
+## 0. Prioridad nueva (pedida el 2026-11-13): despacho diario + etiquetas
+
+- **Lista de despacho del día**: todo lo vendido ese día (tienda + Mercado
+  Libre) con datos del cliente y del producto, para preparar y enviar.
+- **Impresión de etiquetas de paquete** con una impresora conectada.
+- **Tienda pública** (base ya hecha en Wix) + **sistema interno** sólo para
+  el dueño, conectado a **Mercado Libre**.
+- Decisiones (2026-11-13): impresora térmica de etiquetas 10 × 15 cm; la
+  tienda pública se rehace acá (Wix queda de referencia); se empieza por
+  despacho + etiquetas.
+- **[hecho] Despacho + etiquetas con ventas a mano**: `/stock/despacho` y
+  `/etiquetas`. Detalle en `docs/FASE-2.md`.
+- **Falta de esto**:
+  1. Probar la impresión con la impresora térmica real y ajustar la etiqueta
+     (márgenes, tamaños, código de barras/QR, remitente editable).
+  2. **Conectar Mercado Libre**: que las órdenes entren solas a `ventas`
+     (`canal = mercadolibre`, `numero_externo` = id de orden) y usar la
+     etiqueta oficial de Mercado Envíos. Necesita app de desarrollador + OAuth
+     de las dos cuentas.
+  3. **Tienda pública** dentro de este proyecto (catálogo, carrito,
+     checkout) que cree ventas con `canal = tienda`; diseño tomando la base
+     de Wix y el kiosco de Steve's Burger.
+  4. Decidir si el sistema interno queda sólo para el dueño (hoy hay roles
+     dueño / encargado / contador).
+  5. Generar el ingreso en Caja al despachar (cuidando no duplicarlo con
+     Mercado Pago, Paso 5).
+  6. Test automático del flujo despachar/deshacer (hoy probado a mano con la
+     API; sólo la validación tiene tests).
+
+---
+
 ## 1. Cosas chicas que cierran la Fase 2 (se pueden hacer ya, sin nada de afuera)
 
 ### 1.1 Enganchar la compra de material con el gasto en el Control de Caja

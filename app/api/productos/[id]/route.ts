@@ -52,12 +52,16 @@ export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ 
       .prepare(`SELECT COUNT(*) c FROM publicaciones WHERE producto_id = ?`)
       .get(actual.id) as { c: number }).c;
 
-    if (conPublicaciones > 0) {
+    const conVentas = (db
+      .prepare(`SELECT COUNT(*) c FROM venta_items WHERE producto_id = ?`)
+      .get(actual.id) as { c: number }).c;
+
+    if (conPublicaciones > 0 || conVentas > 0) {
       db.prepare(`UPDATE productos SET activo = 0, actualizado = datetime('now','localtime') WHERE id = ?`).run(actual.id);
       return NextResponse.json({
         ok: true,
         desactivado: true,
-        mensaje: "El producto tiene publicaciones, se desactivó en vez de borrarse.",
+        mensaje: "El producto tiene publicaciones o ventas, se desactivó en vez de borrarse.",
       });
     }
     db.prepare(`DELETE FROM composicion_producto WHERE producto_id = ?`).run(actual.id);

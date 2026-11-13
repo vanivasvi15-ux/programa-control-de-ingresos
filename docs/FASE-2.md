@@ -171,6 +171,60 @@ cola de comandos, escala cuando no sabe, respuestas predeterminadas).
 
 Cada paso con confirmación entre medio, como en la Fase 1.
 
+### Requerimiento aclarado por el dueño (2026-11-13)
+
+Esto reordena los Pasos 3 y 4: la pieza central pasa a ser **la cola de
+ventas del día**, que se alimenta de la tienda y de Mercado Libre.
+
+- **Lista de despacho diaria**: cada día de venta tiene una lista con todo lo
+  vendido para despachar. Cada línea lleva datos del **cliente** (nombre,
+  teléfono, dirección/localidad, forma de entrega, canal de venta, número de
+  orden/seguimiento) y del **producto** (kit, variante con/sin bisagra,
+  cantidad, qué piezas lleva, si hay stock completo o faltan piezas).
+- **Etiquetas de paquete impresas**: conectar una impresora y imprimir la
+  etiqueta de cada paquete desde la lista (una por paquete, o todas las del
+  día juntas). Para ventas de ML con Mercado Envíos, la etiqueta oficial la
+  genera ML por API (PDF/ZPL); para ventas de la tienda y envíos por correo,
+  la genera el programa con el formato propio.
+- **Tienda pública** (la ve todo el mundo): catálogo, carrito, checkout.
+  Parecida a la de Steve's Burger (`/` kiosco público + `/admin` interno).
+  Hay una **base de la página ya creada en Wix**.
+- **Sistema interno** (`/dinero`, `/stock`, despacho): sólo accede el dueño
+  (hoy hay otros roles en el esquema; definir si se mantienen).
+- **Conectado a Mercado Libre**: las ventas de ML entran solas a la misma
+  lista de despacho, y el stock se sincroniza.
+- **Decisiones tomadas (2026-11-13)**: impresora **térmica de etiquetas**
+  (formato 10 × 15 cm); la tienda pública **se rehace dentro de este
+  proyecto** (la base de Wix queda sólo como referencia de diseño); se
+  empieza por **lista de despacho + etiquetas** con ventas cargadas a mano,
+  y después se suman Mercado Libre y la tienda.
+
+**Hecho (2026-11-13) — Paso 3a: despacho + etiquetas**
+- Tablas `ventas` + `venta_items` (`lib/db.ts`). Una venta = un comprador;
+  varios renglones, varios bultos, canal (`mercadolibre|tienda|manual|otro`),
+  entrega (`envio_ml|correo|mensajeria|retiro`), estado
+  (`pendiente → preparado → despachado`, o `anulado`). Índice único
+  `(canal, numero_externo)` para que una orden de ML no entre dos veces.
+- `lib/despacho-datos.ts` (validación pura, con tests) y `lib/despacho.ts`
+  (armado, alta/edición, cambio de estado). **Despachar descuenta el stock**
+  de las piezas/herrajes de lo vendido (movimiento `venta`); si no alcanza →
+  422 con la lista de faltantes y se puede "despachar igual" sin tocar el
+  stock. Deshacer / anular devuelve lo descontado. Los productos de una
+  venta ya despachada no se editan; los datos del cliente y el seguimiento sí.
+- API: `GET/POST /api/ventas` (filtros `fecha`, `desde`, `hasta`, `estado`,
+  `abiertas=1`, `ids`), `GET/PUT/DELETE /api/ventas/[id]`.
+- Pantalla `/stock/despacho` (sidebar "Taller → Despacho"): navegador de día,
+  por despachar / despachadas / atrasadas, estado de stock por venta
+  (stock ok / hay que fabricar / falta material), alta y edición.
+- Etiquetas: `/etiquetas?ids=1,2,3` (fuera de la barra lateral) genera una
+  etiqueta de 10 × 15 cm por bulto (`@page` de 100 × 150 mm) con
+  destinatario, entrega, seguimiento, contenido y nota. Se imprime con el
+  diálogo del navegador eligiendo la impresora térmica.
+- **Falta de este paso**: probar con la impresora real (márgenes, tamaño de
+  fuente); código de barras / QR en la etiqueta; remitente editable (hoy fijo
+  "Herrería VyV"); ZPL directo si el diálogo del navegador no alcanza; las
+  etiquetas oficiales de Mercado Envíos (PDF/ZPL de ML) cuando se conecte ML.
+
 El detalle del **Paso 1** está en [FASE-2-PASO-1.md](FASE-2-PASO-1.md).
 
 ---

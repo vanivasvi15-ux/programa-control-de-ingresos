@@ -605,6 +605,51 @@ function crearConexion(): DatabaseSync {
       insumo_id INTEGER NOT NULL REFERENCES insumos(id),
       UNIQUE (lista_id, insumo_id)
     );
+
+    -- VENTAS A DESPACHAR (lista diaria + etiquetas). Una venta = un
+    -- comprador/pedido; puede tener varios renglones y varios bultos.
+    -- Las ventas de Mercado Libre entran por aca con canal mercadolibre.
+    CREATE TABLE IF NOT EXISTS ventas (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      canal TEXT NOT NULL DEFAULT 'manual'
+        CHECK (canal IN ('mercadolibre', 'tienda', 'manual', 'otro')),
+      cuenta TEXT,
+      numero_externo TEXT,
+      fecha TEXT NOT NULL,
+      cliente_nombre TEXT NOT NULL,
+      cliente_telefono TEXT,
+      cliente_email TEXT,
+      direccion TEXT,
+      localidad TEXT,
+      provincia TEXT,
+      codigo_postal TEXT,
+      entrega TEXT NOT NULL DEFAULT 'correo'
+        CHECK (entrega IN ('envio_ml', 'correo', 'mensajeria', 'retiro')),
+      seguimiento TEXT,
+      bultos INTEGER NOT NULL DEFAULT 1 CHECK (bultos > 0),
+      nota TEXT,
+      estado TEXT NOT NULL DEFAULT 'pendiente'
+        CHECK (estado IN ('pendiente', 'preparado', 'despachado', 'anulado')),
+      stock_descontado INTEGER NOT NULL DEFAULT 0,
+      despachado_en TEXT,
+      usuario_id INTEGER REFERENCES usuarios(id),
+      creado TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),
+      actualizado TEXT NOT NULL DEFAULT (datetime('now', 'localtime'))
+    );
+    CREATE INDEX IF NOT EXISTS idx_ventas_fecha ON ventas(fecha);
+    CREATE INDEX IF NOT EXISTS idx_ventas_estado ON ventas(estado);
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_ventas_externo
+      ON ventas(canal, numero_externo) WHERE numero_externo IS NOT NULL;
+
+    CREATE TABLE IF NOT EXISTS venta_items (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      venta_id INTEGER NOT NULL REFERENCES ventas(id),
+      producto_id INTEGER REFERENCES productos(id),
+      titulo TEXT,
+      cantidad INTEGER NOT NULL CHECK (cantidad > 0),
+      precio_unitario INTEGER NOT NULL DEFAULT 0
+    );
+    CREATE INDEX IF NOT EXISTS idx_venta_items_venta ON venta_items(venta_id);
   `);
 
   // Semilla única de bot_respuestas_predeterminadas (sólo si está vacía).

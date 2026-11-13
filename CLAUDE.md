@@ -270,6 +270,13 @@ por pasos: **[docs/FASE-2.md](docs/FASE-2.md)** y **[docs/FASE-2-PASO-1.md](docs
   `produccion`, `compras`, `recuentos`, `movimientos`. Componentes en
   `components/stock/`. La barra lateral (`components/Sidebar.tsx`) ahora
   tiene secciones **Caja** y **Taller**.
+- **[hecho] Paso 3a — despacho + etiquetas** (2026-11-13): tablas `ventas` +
+  `venta_items`, `lib/despacho-datos.ts` (validación pura) y
+  `lib/despacho.ts` (despachar descuenta stock, deshacer lo devuelve), API
+  `/api/ventas`, pantalla `/stock/despacho` y etiquetas 10 × 15 cm en
+  `/etiquetas?ids=` (sin barra lateral, para la impresora térmica). Ver
+  `docs/FASE-2.md` y `docs/PENDIENTE.md`. Decisiones del dueño: tienda pública
+  se rehace en este proyecto, Mercado Libre alimenta la misma lista.
 - **Pendiente**: enganche compra → `gasto` en el Control de Caja; el aviso
   automático del recuento (cron); Pasos 3–6 (tienda, ML, MP, chatbot) y
   módulos A–E de FASE-2.md.

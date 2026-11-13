@@ -35,6 +35,7 @@ const GRUPOS: Grupo[] = [
     seccion: "Taller",
     items: [
       { href: "/stock", label: "Resumen", icono: "panel" },
+      { href: "/stock/despacho", label: "Despacho", icono: "camion" },
       { href: "/stock/insumos", label: "Insumos", icono: "caja" },
       { href: "/stock/piezas", label: "Piezas", icono: "pieza" },
       { href: "/stock/productos", label: "Productos", icono: "etiqueta" },

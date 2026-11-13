@@ -4,6 +4,7 @@
 // (ya en camelCase), para tiparlas igual en todas las pantallas de /stock.
 
 import type { TipoInsumo } from "./stock-datos";
+import type { CanalVenta, Entrega, EstadoVenta } from "./despacho-datos";
 export type { TipoInsumo } from "./stock-datos";
 
 export type Insumo = {
@@ -150,6 +151,42 @@ export type Faltantes = {
   listo: boolean;
   faltantes: { tipo: "insumo" | "base"; nombre: string; faltan: number; unidad: string }[];
   aFabricar: { nombre: string; cantidad: number }[];
+};
+
+export type VentaItem = {
+  id: number;
+  productoId: number | null;
+  productoNombre: string | null;
+  titulo: string | null;
+  cantidad: number;
+  precioUnitario: number;
+};
+
+export type Venta = {
+  id: number;
+  canal: CanalVenta;
+  cuenta: string | null;
+  numeroExterno: string | null;
+  fecha: string;
+  clienteNombre: string;
+  clienteTelefono: string | null;
+  clienteEmail: string | null;
+  direccion: string | null;
+  localidad: string | null;
+  provincia: string | null;
+  codigoPostal: string | null;
+  entrega: Entrega;
+  seguimiento: string | null;
+  bultos: number;
+  nota: string | null;
+  estado: EstadoVenta;
+  stockDescontado: boolean;
+  despachadoEn: string | null;
+  creado: string;
+  actualizado: string;
+  estadoStock: "listo" | "fabricar" | "faltan" | null;
+  detalleStock: string[];
+  items: VentaItem[];
 };
 
 export const NOMBRE_TIPO_INSUMO: Record<TipoInsumo, string> = {
