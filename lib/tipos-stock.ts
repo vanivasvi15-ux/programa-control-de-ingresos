@@ -32,6 +32,7 @@ export type PiezaBase = {
   manoObraMinutos: number;
   costoCalculado: number | null;
   costoActualizado: string | null;
+  codigoBarras: string | null;
   activo: boolean;
   nota: string | null;
   creado: string;
@@ -54,6 +55,7 @@ export type Producto = {
   precio: number;
   costoCalculado: number | null;
   costoActualizado: string | null;
+  codigoBarras: string | null;
   margen: number | null;
   imagen: string | null;
   activo: boolean;

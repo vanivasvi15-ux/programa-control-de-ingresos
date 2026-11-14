@@ -220,6 +220,28 @@ ventas del día**, que se alimenta de la tienda y de Mercado Libre.
   etiqueta de 10 × 15 cm por bulto (`@page` de 100 × 150 mm) con
   destinatario, entrega, seguimiento, contenido y nota. Se imprime con el
   diálogo del navegador eligiendo la impresora térmica.
+**Hecho (2026-11-14) — códigos de barras para el taller**
+- Columna `codigo_barras` en `productos_base` y `productos` (migración
+  `2026-11-14-01-codigo-barras`, rellena lo existente). Si no se carga uno, se
+  genera solo: **PB00001** (pieza base) / **PF00001** (producto final). Sólo
+  letras y números a propósito: el lector USB escribe como teclado y los
+  símbolos (guiones, barras) cambian según la distribución del teclado.
+  También se puede poner uno propio (por ejemplo un EAN de fábrica). Es único
+  entre piezas y productos (409 si choca).
+- `lib/codigos-datos.ts` (formato + validación pura, con tests); dibujo
+  Code128 con `jsbarcode` (`components/CodigoBarras.tsx`).
+- Piezas y Productos: el código se ve y edita en el modal (con vista previa),
+  aparece en la lista, la búsqueda lo encuentra, y hay botón de impresora por
+  fila + "Imprimir códigos" para todas las visibles.
+- `/etiquetas/codigos?tipo=base|producto&ids=…&copias=N`: etiquetas de
+  60 × 40 mm con nombre + código (sin barra lateral).
+- `GET /api/codigos/[codigo]` + caja "Escanear código" en el Resumen del
+  Taller: identifica la pieza/producto y dice stock, costo y, para un
+  producto, si se puede armar hoy o qué falta.
+- **Falta de esto**: probar con el lector y la impresora reales; usar el
+  escaneo en Despacho (marcar renglones preparados / despachar escaneando) y
+  en Producción y Recuentos (cargar stock escaneando); códigos para insumos.
+
 - **Falta de este paso**: probar con la impresora real (márgenes, tamaño de
   fuente); código de barras / QR en la etiqueta; remitente editable (hoy fijo
   "Herrería VyV"); ZPL directo si el diálogo del navegador no alcanza; las

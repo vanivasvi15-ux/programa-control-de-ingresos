@@ -277,6 +277,11 @@ por pasos: **[docs/FASE-2.md](docs/FASE-2.md)** y **[docs/FASE-2-PASO-1.md](docs
   `/etiquetas?ids=` (sin barra lateral, para la impresora térmica). Ver
   `docs/FASE-2.md` y `docs/PENDIENTE.md`. Decisiones del dueño: tienda pública
   se rehace en este proyecto, Mercado Libre alimenta la misma lista.
+- **[hecho] Códigos de barras** (2026-11-14): `codigo_barras` en
+  `productos_base` (PB00001) y `productos` (PF00001), único entre las dos
+  tablas; `lib/codigos-datos.ts` (puro, con tests), dibujo con `jsbarcode`
+  (`components/CodigoBarras.tsx`), `GET /api/codigos/[codigo]`, escáner en el
+  Resumen del Taller y etiquetas 60 × 40 mm en `/etiquetas/codigos`.
 - **Pendiente**: enganche compra → `gasto` en el Control de Caja; el aviso
   automático del recuento (cron); Pasos 3–6 (tienda, ML, MP, chatbot) y
   módulos A–E de FASE-2.md.

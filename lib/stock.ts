@@ -21,6 +21,7 @@ import {
   type TipoInsumo,
   type MotivoStock,
 } from "./stock-datos";
+import { codigoPorDefecto, normalizarCodigo, type TipoCodigo } from "./codigos-datos";
 
 // ===========================================================================
 // TIPOS DE FILA
@@ -49,6 +50,7 @@ export type ProductoBaseRow = {
   mano_obra_minutos: number;
   costo_calculado: number | null;
   costo_actualizado: string | null;
+  codigo_barras: string | null;
   activo: number;
   nota: string | null;
   creado: string;
@@ -62,6 +64,7 @@ export type ProductoRow = {
   precio: number;
   costo_calculado: number | null;
   costo_actualizado: string | null;
+  codigo_barras: string | null;
   imagen: string | null;
   activo: number;
   nota: string | null;
@@ -101,6 +104,7 @@ export function serializarPiezaBase(p: ProductoBaseRow) {
     manoObraMinutos: p.mano_obra_minutos,
     costoCalculado: p.costo_calculado,
     costoActualizado: p.costo_actualizado,
+    codigoBarras: p.codigo_barras,
     activo: !!p.activo,
     nota: p.nota,
     creado: p.creado,
@@ -116,6 +120,7 @@ export function serializarProducto(p: ProductoRow) {
     precio: p.precio,
     costoCalculado: p.costo_calculado,
     costoActualizado: p.costo_actualizado,
+    codigoBarras: p.codigo_barras,
     margen: p.costo_calculado != null ? p.precio - p.costo_calculado : null,
     imagen: p.imagen,
     activo: !!p.activo,
@@ -617,7 +622,7 @@ export function validarInsumo(
 export function validarPiezaBase(
   body: Record<string, unknown>,
   base?: ProductoBaseRow
-): Ok<{ nombre: string; mano_obra_minutos: number; activo: number; nota: string | null }> | Err {
+): Ok<{ nombre: string; mano_obra_minutos: number; codigo_barras: string | null; activo: number; nota: string | null }> | Err {
   const nombre = String(body.nombre ?? base?.nombre ?? "").trim();
   if (!nombre) return { ok: false, error: "Falta el nombre de la pieza" };
 
@@ -629,7 +634,10 @@ export function validarPiezaBase(
   const notaCruda = body.nota !== undefined ? body.nota : base?.nota;
   const nota = typeof notaCruda === "string" && notaCruda.trim() ? notaCruda.trim() : null;
 
-  return { ok: true, datos: { nombre, mano_obra_minutos, activo, nota } };
+  const codigo = normalizarCodigo(body.codigo_barras !== undefined ? body.codigo_barras : base?.codigo_barras);
+  if (!codigo.ok) return { ok: false, error: codigo.error };
+
+  return { ok: true, datos: { nombre, mano_obra_minutos, codigo_barras: codigo.codigo, activo, nota } };
 }
 
 export function validarProducto(
@@ -639,6 +647,7 @@ export function validarProducto(
   nombre: string;
   sku: string | null;
   precio: number;
+  codigo_barras: string | null;
   imagen: string | null;
   activo: number;
   nota: string | null;
@@ -659,7 +668,50 @@ export function validarProducto(
   const notaCruda = body.nota !== undefined ? body.nota : base?.nota;
   const nota = typeof notaCruda === "string" && notaCruda.trim() ? notaCruda.trim() : null;
 
-  return { ok: true, datos: { nombre, sku, precio, imagen, activo, nota } };
+  const codigo = normalizarCodigo(body.codigo_barras !== undefined ? body.codigo_barras : base?.codigo_barras);
+  if (!codigo.ok) return { ok: false, error: codigo.error };
+
+  return { ok: true, datos: { nombre, sku, precio, codigo_barras: codigo.codigo, imagen, activo, nota } };
+}
+
+// ===========================================================================
+// CÓDIGOS DE BARRAS
+// ===========================================================================
+
+const TABLA_CODIGO: Record<TipoCodigo, "productos_base" | "productos"> = {
+  base: "productos_base",
+  producto: "productos",
+};
+
+// ¿Ese código ya lo usa otra pieza u otro producto? (los dos comparten el
+// mismo espacio de códigos, porque el lector no sabe de qué tabla viene).
+// "excepto" deja afuera al registro que se está editando.
+export function codigoEnUso(
+  codigo: string,
+  excepto?: { tipo: TipoCodigo; id: number }
+): { tipo: TipoCodigo; id: number; nombre: string } | null {
+  for (const tipo of ["base", "producto"] as const) {
+    const fila = db
+      .prepare(`SELECT id, nombre FROM ${TABLA_CODIGO[tipo]} WHERE codigo_barras = ?`)
+      .get(codigo) as { id: number; nombre: string } | undefined;
+    if (fila && !(excepto && excepto.tipo === tipo && excepto.id === fila.id)) {
+      return { tipo, id: fila.id, nombre: fila.nombre };
+    }
+  }
+  return null;
+}
+
+// Si el registro quedó sin código, le pone el que se genera solo (PB00012).
+export function asegurarCodigo(tipo: TipoCodigo, id: number): void {
+  const tabla = TABLA_CODIGO[tipo];
+  const fila = db.prepare(`SELECT codigo_barras FROM ${tabla} WHERE id = ?`).get(id) as
+    | { codigo_barras: string | null }
+    | undefined;
+  if (!fila || fila.codigo_barras) return;
+  let codigo = codigoPorDefecto(tipo, id);
+  // Rarísimo: alguien cargó a mano un código igual al automático.
+  for (let n = 2; codigoEnUso(codigo, { tipo, id }); n++) codigo = `${codigoPorDefecto(tipo, id)}${n}`;
+  db.prepare(`UPDATE ${tabla} SET codigo_barras = ? WHERE id = ?`).run(codigo, id);
 }
 
 export type RecetaEntrada = { insumoId: number; cantidad: number; bloqueante?: boolean };

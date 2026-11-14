@@ -144,6 +144,29 @@ const MIGRACIONES: Migracion[] = [
       });
     },
   },
+  {
+    id: "2026-11-14-01-codigo-barras",
+    descripcion:
+      "Agrega codigo_barras a productos_base (PB00001) y productos (PF00001), rellena las filas existentes y lo hace único",
+    ejecutar(conn) {
+      for (const [tabla, prefijo, indice] of [
+        ["productos_base", "PB", "idx_productos_base_codigo"],
+        ["productos", "PF", "idx_productos_codigo"],
+      ]) {
+        try {
+          conn.exec(`ALTER TABLE ${tabla} ADD COLUMN codigo_barras TEXT`);
+        } catch (e) {
+          if (!String(e).toLowerCase().includes("duplicate column")) throw e;
+        }
+        conn.exec(
+          `UPDATE ${tabla} SET codigo_barras = '${prefijo}' || printf('%05d', id) WHERE codigo_barras IS NULL`
+        );
+        conn.exec(
+          `CREATE UNIQUE INDEX IF NOT EXISTS ${indice} ON ${tabla}(codigo_barras) WHERE codigo_barras IS NOT NULL`
+        );
+      }
+    },
+  },
 ];
 
 function correrMigraciones(conn: DatabaseSync) {

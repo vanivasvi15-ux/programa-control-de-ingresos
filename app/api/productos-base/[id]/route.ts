@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { conUsuario, leerBody, errorJson } from "@/lib/api";
-import { serializarPiezaBase, validarPiezaBase, recalcularCostos, type ProductoBaseRow } from "@/lib/stock";
+import { serializarPiezaBase, validarPiezaBase, recalcularCostos, codigoEnUso, asegurarCodigo, type ProductoBaseRow } from "@/lib/stock";
 
 export const dynamic = "force-dynamic";
 
@@ -34,10 +34,16 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
       if (choca) return errorJson("Ya hay otra pieza con ese nombre", 409);
     }
 
+    if (d.codigo_barras && d.codigo_barras !== actual.codigo_barras) {
+      const choca = codigoEnUso(d.codigo_barras, { tipo: "base", id: actual.id });
+      if (choca) return errorJson(`Ese código de barras ya lo tiene "${choca.nombre}"`, 409);
+    }
+
     db.prepare(
-      `UPDATE productos_base SET nombre = ?, mano_obra_minutos = ?, activo = ?, nota = ?,
+      `UPDATE productos_base SET nombre = ?, mano_obra_minutos = ?, codigo_barras = ?, activo = ?, nota = ?,
          actualizado = datetime('now','localtime') WHERE id = ?`
-    ).run(d.nombre, d.mano_obra_minutos, d.activo, d.nota, actual.id);
+    ).run(d.nombre, d.mano_obra_minutos, d.codigo_barras, d.activo, d.nota, actual.id);
+    asegurarCodigo("base", actual.id);
 
     if (d.mano_obra_minutos !== actual.mano_obra_minutos) recalcularCostos();
     return NextResponse.json(serializarPiezaBase(traer(actual.id)!));

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db, transaccion } from "@/lib/db";
 import { conUsuario, leerBody, errorJson } from "@/lib/api";
-import { serializarProducto, recalcularCostos, type ProductoRow, type ProductoBaseRow } from "@/lib/stock";
+import { serializarProducto, recalcularCostos, asegurarCodigo, type ProductoRow, type ProductoBaseRow } from "@/lib/stock";
 
 export const dynamic = "force-dynamic";
 
@@ -37,6 +37,7 @@ export async function POST(req: NextRequest) {
         .prepare(`INSERT INTO productos (nombre, precio) VALUES (?, ?)`)
         .run(nombre, precio);
       const pid = Number(r.lastInsertRowid);
+      asegurarCodigo("producto", pid);
       db.prepare(
         `INSERT INTO composicion_producto (producto_id, item_tipo, item_id, cantidad) VALUES (?, 'base', ?, ?)`
       ).run(pid, piezaId, cantidad);

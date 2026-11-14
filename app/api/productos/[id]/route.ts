@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { conUsuario, leerBody, errorJson } from "@/lib/api";
-import { serializarProducto, validarProducto, type ProductoRow } from "@/lib/stock";
+import { serializarProducto, validarProducto, codigoEnUso, asegurarCodigo, type ProductoRow } from "@/lib/stock";
 
 export const dynamic = "force-dynamic";
 
@@ -34,10 +34,16 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
       if (choca) return errorJson("Ya hay otro producto con ese código (SKU)", 409);
     }
 
+    if (d.codigo_barras && d.codigo_barras !== actual.codigo_barras) {
+      const choca = codigoEnUso(d.codigo_barras, { tipo: "producto", id: actual.id });
+      if (choca) return errorJson(`Ese código de barras ya lo tiene "${choca.nombre}"`, 409);
+    }
+
     db.prepare(
-      `UPDATE productos SET nombre = ?, sku = ?, precio = ?, imagen = ?, activo = ?, nota = ?,
+      `UPDATE productos SET nombre = ?, sku = ?, precio = ?, codigo_barras = ?, imagen = ?, activo = ?, nota = ?,
          actualizado = datetime('now','localtime') WHERE id = ?`
-    ).run(d.nombre, d.sku, d.precio, d.imagen, d.activo, d.nota, actual.id);
+    ).run(d.nombre, d.sku, d.precio, d.codigo_barras, d.imagen, d.activo, d.nota, actual.id);
+    asegurarCodigo("producto", actual.id);
     return NextResponse.json(serializarProducto(traer(actual.id)!));
   }, { escritura: true });
 }

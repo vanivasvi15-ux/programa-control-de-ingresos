@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { conUsuario, leerBody, errorJson } from "@/lib/api";
-import { serializarProducto, validarProducto, type ProductoRow } from "@/lib/stock";
+import { serializarProducto, validarProducto, codigoEnUso, asegurarCodigo, type ProductoRow } from "@/lib/stock";
 
 export const dynamic = "force-dynamic";
 
@@ -36,14 +36,19 @@ export async function POST(req: NextRequest) {
       if (choca) return errorJson("Ya hay un producto con ese código (SKU)", 409);
     }
 
+    if (d.codigo_barras) {
+      const choca = codigoEnUso(d.codigo_barras);
+      if (choca) return errorJson(`Ese código de barras ya lo tiene "${choca.nombre}"`, 409);
+    }
+
     const r = db
       .prepare(
-        `INSERT INTO productos (nombre, sku, precio, imagen, activo, nota) VALUES (?, ?, ?, ?, ?, ?)`
+        `INSERT INTO productos (nombre, sku, precio, codigo_barras, imagen, activo, nota) VALUES (?, ?, ?, ?, ?, ?, ?)`
       )
-      .run(d.nombre, d.sku, d.precio, d.imagen, d.activo, d.nota);
-    const creado = db
-      .prepare(`SELECT * FROM productos WHERE id = ?`)
-      .get(Number(r.lastInsertRowid)) as ProductoRow;
+      .run(d.nombre, d.sku, d.precio, d.codigo_barras, d.imagen, d.activo, d.nota);
+    const id = Number(r.lastInsertRowid);
+    asegurarCodigo("producto", id);
+    const creado = db.prepare(`SELECT * FROM productos WHERE id = ?`).get(id) as ProductoRow;
     return NextResponse.json(serializarProducto(creado), { status: 201 });
   }, { escritura: true });
 }

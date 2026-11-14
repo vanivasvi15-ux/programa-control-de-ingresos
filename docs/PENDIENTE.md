@@ -21,7 +21,12 @@ API y panel `/stock` del taller). Ver `CLAUDE.md` y `README.md`.
   despacho + etiquetas.
 - **[hecho] Despacho + etiquetas con ventas a mano**: `/stock/despacho` y
   `/etiquetas`. Detalle en `docs/FASE-2.md`.
+- **[hecho] Códigos de barras** (2026-11-14) para piezas base y productos
+  finales: PB00001 / PF00001 automáticos o propios, etiquetas 60 × 40 mm,
+  escáner en el Resumen del Taller. Detalle en `docs/FASE-2.md`.
 - **Falta de esto**:
+  0. Probar con el lector USB y la impresora reales; que Despacho, Producción
+     y Recuentos también trabajen escaneando; códigos para insumos.
   1. Probar la impresión con la impresora térmica real y ajustar la etiqueta
      (márgenes, tamaños, código de barras/QR, remitente editable).
   2. **Conectar Mercado Libre**: que las órdenes entren solas a `ventas`

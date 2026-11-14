@@ -5,6 +5,7 @@
 import { useEffect, useState } from "react";
 import { Modal, Boton, Campo, inputClase } from "@/components/ui";
 import Icono from "@/components/Icono";
+import CodigoBarras from "@/components/CodigoBarras";
 import { formatearPesos } from "@/lib/formato";
 import type { ComposicionLineaVista, Insumo, PiezaBase, Producto } from "@/lib/tipos-stock";
 
@@ -28,6 +29,7 @@ export default function ProductoModal({
   const [sku, setSku] = useState(producto?.sku ?? "");
   const [precio, setPrecio] = useState(String(producto?.precio ?? 0));
   const [nota, setNota] = useState(producto?.nota ?? "");
+  const [codigo, setCodigo] = useState(producto?.codigoBarras ?? "");
   const [lineas, setLineas] = useState<LineaEdit[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [guardando, setGuardando] = useState(false);
@@ -55,7 +57,13 @@ export default function ProductoModal({
       const resP = await fetch(editar ? `/api/productos/${productoId}` : "/api/productos", {
         method: editar ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nombre, sku: sku.trim() || undefined, precio: Number(precio), nota }),
+        body: JSON.stringify({
+          nombre,
+          sku: sku.trim() || undefined,
+          precio: Number(precio),
+          codigo_barras: codigo,
+          nota,
+        }),
       });
       if (!resP.ok) {
         setError((await resP.json().catch(() => ({}))).error ?? "No se pudo guardar el producto");
@@ -126,6 +134,25 @@ export default function ProductoModal({
           <Campo label="Código / SKU (opcional)">
             <input value={sku} onChange={(e) => setSku(e.target.value)} className={inputClase} />
           </Campo>
+        </div>
+
+        <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-[1fr_auto]">
+          <Campo
+            label="Código de barras"
+            hint="Vacío = se genera solo (PF00001…). Si el producto ya tiene un código impreso, ponelo acá."
+          >
+            <input
+              value={codigo}
+              onChange={(e) => setCodigo(e.target.value)}
+              placeholder="Se genera al guardar"
+              className={`${inputClase} font-mono`}
+            />
+          </Campo>
+          {codigo.trim() && (
+            <div className="overflow-hidden rounded-lg border border-[var(--color-border)] bg-white">
+              <CodigoBarras valor={codigo.trim()} alto={36} ancho={1.5} tamanoTexto={11} />
+            </div>
+          )}
         </div>
 
         <div>

@@ -8,6 +8,7 @@ import Icono from "@/components/Icono";
 import { Tarjeta, Chip, EstadoVacio } from "@/components/ui";
 import { formatearPesos, formatearFecha } from "@/lib/formato";
 import { formatearCantidad } from "@/lib/tipos-stock";
+import EscanerCodigo from "@/components/stock/EscanerCodigo";
 
 type Resumen = {
   contadores: { insumos: number; bajoMinimo: number; piezas: number; productos: number };
@@ -80,6 +81,8 @@ export default function StockResumenPage() {
   return (
     <div className="space-y-5">
       <Encabezado titulo="Taller" subtitulo="Stock, producción y costos" />
+
+      <EscanerCodigo />
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <KpiChico label="Valor del stock" valor={formatearPesos(data.valorStock)} />

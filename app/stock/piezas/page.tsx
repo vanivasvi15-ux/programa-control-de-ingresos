@@ -8,6 +8,7 @@ import { Tarjeta, Boton, EstadoVacio, inputClase } from "@/components/ui";
 import ConfirmDialog from "@/components/ConfirmDialog";
 import PiezaModal from "@/components/stock/PiezaModal";
 import { formatearPesos } from "@/lib/formato";
+import { urlEtiquetasCodigos } from "@/lib/codigos-datos";
 import { formatearCantidad, type Insumo, type PiezaBase } from "@/lib/tipos-stock";
 
 export default function PiezasPage() {
@@ -35,14 +36,26 @@ export default function PiezasPage() {
     cargar();
   }, [cargar]);
 
+  // Viene del escáner del Resumen: ya filtra por ese código.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) setTexto(q);
+  }, []);
+
   const filtradas = useMemo(() => {
     const t = texto.trim().toLowerCase();
     return piezas.filter((p) => {
       if (!verInactivas && !p.activo) return false;
-      if (t && !p.nombre.toLowerCase().includes(t)) return false;
+      if (t && !p.nombre.toLowerCase().includes(t) && !(p.codigoBarras ?? "").toLowerCase().includes(t)) {
+        return false;
+      }
       return true;
     });
   }, [piezas, texto, verInactivas]);
+
+  function abrirCodigos(ids: number[]) {
+    if (ids.length) window.open(urlEtiquetasCodigos("base", ids), "_blank");
+  }
 
   async function confirmarBorrado() {
     if (!borrar) return;
@@ -80,9 +93,18 @@ export default function PiezasPage() {
         titulo="Piezas fabricadas"
         subtitulo="Lo que arma el taller: carros, rieles, topes…"
         acciones={
-          <Boton variante="primario" icono="mas" onClick={() => setModal({})} disabled={insumos.length === 0}>
-            Nueva pieza
-          </Boton>
+          <>
+            <Boton
+              icono="impresora"
+              onClick={() => abrirCodigos(filtradas.map((p) => p.id))}
+              disabled={filtradas.length === 0}
+            >
+              Imprimir códigos ({filtradas.length})
+            </Boton>
+            <Boton variante="primario" icono="mas" onClick={() => setModal({})} disabled={insumos.length === 0}>
+              Nueva pieza
+            </Boton>
+          </>
         }
       />
 
@@ -102,7 +124,7 @@ export default function PiezasPage() {
           <input
             value={texto}
             onChange={(e) => setTexto(e.target.value)}
-            placeholder="Buscar pieza…"
+            placeholder="Buscar por nombre o escanear un código…"
             className={`${inputClase} pl-8`}
           />
         </label>
@@ -154,9 +176,11 @@ export default function PiezasPage() {
                     <span className={`text-sm font-medium ${!p.activo ? "text-[var(--color-muted)] line-through" : ""}`}>
                       {p.nombre}
                     </span>
-                    {p.manoObraMinutos > 0 && (
-                      <p className="mt-0.5 text-xs text-[var(--color-muted)]">{p.manoObraMinutos} min de mano de obra</p>
-                    )}
+                    <p className="mt-0.5 text-xs text-[var(--color-muted)]">
+                      {p.codigoBarras && <span className="font-mono">{p.codigoBarras}</span>}
+                      {p.codigoBarras && p.manoObraMinutos > 0 && " · "}
+                      {p.manoObraMinutos > 0 && `${p.manoObraMinutos} min de mano de obra`}
+                    </p>
                   </div>
                   <div className="order-2 text-right text-sm font-semibold tabular sm:order-none">
                     {formatearCantidad(p.stock)}
@@ -165,6 +189,13 @@ export default function PiezasPage() {
                     {p.costoCalculado != null ? formatearPesos(p.costoCalculado) : "—"}
                   </div>
                   <div className="order-1 flex justify-end gap-1 sm:order-none">
+                    <button
+                      onClick={() => abrirCodigos([p.id])}
+                      className="grid h-8 w-8 place-items-center rounded-md text-[var(--color-muted)] hover:bg-[var(--color-surface-2)] hover:text-[var(--color-text)]"
+                      title="Imprimir etiqueta con código de barras"
+                    >
+                      <Icono nombre="impresora" size={15} />
+                    </button>
                     <button
                       onClick={() => setVender(p)}
                       className="grid h-8 w-8 place-items-center rounded-md text-[var(--color-muted)] hover:bg-[var(--color-surface-2)] hover:text-[var(--color-text)]"

@@ -9,6 +9,7 @@ import ConfirmDialog from "@/components/ConfirmDialog";
 import ProductoModal from "@/components/stock/ProductoModal";
 import PublicacionesModal from "@/components/stock/PublicacionesModal";
 import { formatearPesos } from "@/lib/formato";
+import { urlEtiquetasCodigos } from "@/lib/codigos-datos";
 import type { Insumo, PiezaBase, Producto } from "@/lib/tipos-stock";
 
 export default function ProductosPage() {
@@ -41,14 +42,26 @@ export default function ProductosPage() {
     cargar();
   }, [cargar]);
 
+  // Viene del escáner del Resumen: ya filtra por ese código.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) setTexto(q);
+  }, []);
+
   const filtrados = useMemo(() => {
     const t = texto.trim().toLowerCase();
     return productos.filter((p) => {
       if (!verInactivos && !p.activo) return false;
-      if (t && !p.nombre.toLowerCase().includes(t)) return false;
+      if (t && !p.nombre.toLowerCase().includes(t) && !(p.codigoBarras ?? "").toLowerCase().includes(t)) {
+        return false;
+      }
       return true;
     });
   }, [productos, texto, verInactivos]);
+
+  function abrirCodigos(ids: number[]) {
+    if (ids.length) window.open(urlEtiquetasCodigos("producto", ids), "_blank");
+  }
 
   async function confirmarBorrado() {
     if (!borrar) return;
@@ -68,9 +81,18 @@ export default function ProductosPage() {
         titulo="Productos"
         subtitulo="Kits y repuestos que se venden. Un producto = una receta; muchas publicaciones."
         acciones={
-          <Boton variante="primario" icono="mas" onClick={() => setModal({})} disabled={piezas.length === 0}>
-            Nuevo producto
-          </Boton>
+          <>
+            <Boton
+              icono="impresora"
+              onClick={() => abrirCodigos(filtrados.map((p) => p.id))}
+              disabled={filtrados.length === 0}
+            >
+              Imprimir códigos ({filtrados.length})
+            </Boton>
+            <Boton variante="primario" icono="mas" onClick={() => setModal({})} disabled={piezas.length === 0}>
+              Nuevo producto
+            </Boton>
+          </>
         }
       />
 
@@ -90,7 +112,7 @@ export default function ProductosPage() {
           <input
             value={texto}
             onChange={(e) => setTexto(e.target.value)}
-            placeholder="Buscar producto…"
+            placeholder="Buscar por nombre o escanear un código…"
             className={`${inputClase} pl-8`}
           />
         </label>
@@ -134,6 +156,11 @@ export default function ProductosPage() {
                       {p.nombre}
                     </span>
                     {p.sku && <Chip>{p.sku}</Chip>}
+                    {p.codigoBarras && (
+                      <span className="rounded-md bg-[var(--color-surface-2)] px-1.5 py-0.5 font-mono text-[11px] text-[var(--color-muted)]">
+                        {p.codigoBarras}
+                      </span>
+                    )}
                     <button
                       onClick={() => setPubs(p)}
                       className="inline-flex items-center gap-1 rounded-md bg-[var(--color-surface-2)] px-1.5 py-0.5 text-[11px] font-semibold text-[var(--color-muted)] hover:text-[var(--color-text)]"
@@ -161,6 +188,13 @@ export default function ProductosPage() {
                       </p>
                     </div>
                   )}
+                  <button
+                    onClick={() => abrirCodigos([p.id])}
+                    className="grid h-8 w-8 place-items-center rounded-md text-[var(--color-muted)] hover:bg-[var(--color-surface-2)] hover:text-[var(--color-text)]"
+                    title="Imprimir etiqueta con código de barras"
+                  >
+                    <Icono nombre="impresora" size={15} />
+                  </button>
                   <button
                     onClick={() => setModal({ producto: p })}
                     className="grid h-8 w-8 place-items-center rounded-md text-[var(--color-muted)] hover:bg-[var(--color-surface-2)] hover:text-[var(--color-text)]"

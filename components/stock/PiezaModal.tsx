@@ -5,6 +5,7 @@
 import { useEffect, useState } from "react";
 import { Modal, Boton, Campo, inputClase } from "@/components/ui";
 import Icono from "@/components/Icono";
+import CodigoBarras from "@/components/CodigoBarras";
 import type { Insumo, PiezaBase, RecetaLineaVista } from "@/lib/tipos-stock";
 
 type LineaEdit = { insumoId: number | ""; cantidad: string; bloqueante: boolean };
@@ -23,6 +24,7 @@ export default function PiezaModal({
   const editar = !!pieza;
   const [nombre, setNombre] = useState(pieza?.nombre ?? "");
   const [manoObra, setManoObra] = useState(String(pieza?.manoObraMinutos ?? 0));
+  const [codigo, setCodigo] = useState(pieza?.codigoBarras ?? "");
   const [lineas, setLineas] = useState<LineaEdit[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [guardando, setGuardando] = useState(false);
@@ -52,7 +54,7 @@ export default function PiezaModal({
       const resP = await fetch(editar ? `/api/productos-base/${piezaId}` : "/api/productos-base", {
         method: editar ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nombre, mano_obra_minutos: Number(manoObra) }),
+        body: JSON.stringify({ nombre, mano_obra_minutos: Number(manoObra), codigo_barras: codigo }),
       });
       if (!resP.ok) {
         setError((await resP.json().catch(() => ({}))).error ?? "No se pudo guardar la pieza");
@@ -117,6 +119,25 @@ export default function PiezaModal({
               className={inputClase}
             />
           </Campo>
+        </div>
+
+        <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-[1fr_auto]">
+          <Campo
+            label="Código de barras"
+            hint="Vacío = se genera solo (PB00001…). Si la pieza ya tiene un código impreso, ponelo acá."
+          >
+            <input
+              value={codigo}
+              onChange={(e) => setCodigo(e.target.value)}
+              placeholder="Se genera al guardar"
+              className={`${inputClase} font-mono`}
+            />
+          </Campo>
+          {codigo.trim() && (
+            <div className="overflow-hidden rounded-lg border border-[var(--color-border)] bg-white">
+              <CodigoBarras valor={codigo.trim()} alto={36} ancho={1.5} tamanoTexto={11} />
+            </div>
+          )}
         </div>
 
         <div>
