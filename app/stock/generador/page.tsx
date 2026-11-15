@@ -163,50 +163,55 @@ export default function GeneradorPage() {
         {ORDEN_TIPOS_KIT.map((tipo) => {
           const def = TIPOS_KIT[tipo];
           const marca = marcas[tipo];
-          const largosEnteros = Object.keys(def.riel === "giratorio" ? AGUJEROS_GIRATORIOS : AGUJEROS_ENTEROS).map(Number);
-          const largosPlegados = Object.keys(AGUJEROS_PLEGADOS).map(Number);
+          const largosEnteros =
+            def.largos?.enteros ??
+            Object.keys(def.riel === "giratorio" ? AGUJEROS_GIRATORIOS : AGUJEROS_ENTEROS).map(Number);
+          const largosPlegados = def.largos?.plegados ?? Object.keys(AGUJEROS_PLEGADOS).map(Number);
           return (
-            <Tarjeta key={tipo} className={`space-y-3 p-4 ${def.jota ? "" : "opacity-60"}`}>
+            <Tarjeta key={tipo} className="space-y-3 p-4">
               <div className="flex flex-wrap items-center gap-2">
                 <p className="text-sm font-bold">{def.etiqueta}</p>
-                {def.jota && (
-                  <span className="text-xs text-[var(--color-muted)]">
-                    jota: {def.jota.partes.map((p) => p.cm).join(" + ")} cm
-                    {def.jota.topeJota ? " + tope jota" : ""}
-                  </span>
-                )}
-                {!def.jota && <Chip color="ambar">Falta un dato: {def.pendiente}</Chip>}
+                <span className="text-xs text-[var(--color-muted)]">
+                  {def.jotas
+                    .map((j) => `${j.nombre} ${j.partes.map((p) => p.cm).join(" + ")} cm${j.topeJota ? " + tope jota" : ""}`)
+                    .join(" · ")}
+                  {!def.topesRiel && " · sin topes de fin de riel"}
+                  {def.topePiso === "giratorio" && " · tope de piso de varilla"}
+                </span>
               </div>
-              {def.jota && (
-                <>
-                  <ListaDeLargos
-                    titulo="Riel entero (cm · agujeros)"
-                    largos={largosEnteros}
-                    marcados={marca.enteros}
-                    etiquetaAgujeros={(l) => agujerosRiel(def.riel, l, false) ?? 0}
-                    onChange={(v) => cambiar(tipo, { enteros: v })}
+              {largosEnteros.length > 0 && (
+                <ListaDeLargos
+                  titulo="Riel entero (cm · agujeros)"
+                  largos={largosEnteros}
+                  marcados={marca.enteros}
+                  etiquetaAgujeros={(l) => agujerosRiel(def.riel, l, false) ?? 0}
+                  onChange={(v) => cambiar(tipo, { enteros: v })}
+                />
+              )}
+              {def.plegable && largosPlegados.length > 0 && (
+                <ListaDeLargos
+                  titulo="Riel plegado (cm · agujeros)"
+                  largos={largosPlegados}
+                  marcados={marca.plegados}
+                  etiquetaAgujeros={(l) => agujerosRiel(def.riel, l, true) ?? 0}
+                  onChange={(v) => cambiar(tipo, { plegados: v })}
+                />
+              )}
+              {def.permiteDoble && (
+                <label className="flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={marca.doble}
+                    onChange={(e) => cambiar(tipo, { doble: e.target.checked })}
                   />
-                  {def.plegable && (
-                    <ListaDeLargos
-                      titulo="Riel plegado (cm · agujeros)"
-                      largos={largosPlegados}
-                      marcados={marca.plegados}
-                      etiquetaAgujeros={(l) => agujerosRiel(def.riel, l, true) ?? 0}
-                      onChange={(v) => cambiar(tipo, { plegados: v })}
-                    />
-                  )}
-                  {def.permiteDoble && (
-                    <label className="flex items-center gap-2 text-sm">
-                      <input
-                        type="checkbox"
-                        checked={marca.doble}
-                        onChange={(e) => cambiar(tipo, { doble: e.target.checked })}
-                      />
-                      Crear también la versión <strong>doble</strong> (dos hojas: 4 jotas, 8 tornillos con tuerca, 2
-                      topes de piso)
-                    </label>
-                  )}
-                </>
+                  Crear también la versión <strong>doble</strong> (dos hojas: 4 jotas, 8 tornillos con tuerca, 2 topes
+                  de piso)
+                </label>
+              )}
+              {!def.permiteDoble && tipo === "superpuesto" && (
+                <p className="text-xs text-[var(--color-muted)]">
+                  Ya viene con 4 jotas (2 reforzadas + 2 superpuestas) y 8 tornillos con tuerca.
+                </p>
               )}
             </Tarjeta>
           );

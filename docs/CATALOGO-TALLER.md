@@ -4,6 +4,10 @@ Medidas que sirven para armar las piezas, las recetas y los kits. **Todo lo que
 dice «a confirmar» todavía no está validado con el dueño.** Complementa a
 `docs/PROCESO-TALLER.md`.
 
+> **Actualización 2026-11-15:** los largos 120, 130, 210, 230 y 260 ya no se
+> venden y no están en el Generador; lo que dicen las tablas de abajo para esos
+> largos es sólo historia. Ver la sección 6c, que manda sobre el resto.
+
 ## 1. Rieles estándar y reforzados: largo → agujeros
 
 Largo en cm. «Entero» = una sola barra. «Plegado» = viene en partes soldadas
@@ -103,6 +107,37 @@ Supuestos del generador sin confirmar (están marcados «SUPUESTO» en
 `lib/generador-datos.ts`): qué planchuela usa la jota reforzada, la de rueda
 libre y la giratoria; que el riel económico usa la planchuela de jota; y que
 «Riel liviano» del cuaderno es el económico.
+
+## 6c. Respuestas del dueño, tras revisar el sitio (2026-11-15)
+
+Fuente del cruce: sitio de Wix `herreriavyv.wixsite.com/misitio` (la tienda de
+Tiendanube que enlaza está suspendida).
+
+- **Largos que ya no se venden** (sacados del Generador): rieles de 120, 130,
+  210, 230 y 260 cm. Se siguen vendiendo 140–200 enteros, y plegados 160–200,
+  220, 240, 250, 280, 300, 320, 360 y 400.
+- **Reforzado**: sí lleva topes de fin de riel. Su jota es **igual a la estándar**
+  (planchuela de jota 29,5 + tope jota) pero con **rueda de 60** (la estándar
+  lleva rueda de 50). El riel reforzado sí es de planchuela gruesa.
+- **Giratorio**: **no lleva topes de fin de riel**. Su **tope de piso es distinto**:
+  una varilla de 6 mm cortada a 4,5 cm + un pedazo de planchuela de jota de 8 cm.
+  Rieles giratorios de **160 a 200 cm: 5 agujeros** (80 a 200 cm en total).
+- **Superpuesto**: siempre viene con **2 jotas reforzadas + 2 jotas superpuestas**
+  (4 en total, 8 tornillos con tuerca, 1 tope de piso). La jota superpuesta son
+  dos partes de la planchuela de jota estándar: **20 cm y 21 cm**, sin tope jota.
+  Se vende en riel de 150, 200 y 300 cm.
+- **Kits de pérgola**: se venden, todavía sin cargar (faltan sus medidas y qué llevan).
+- **Mercado Libre**: casi todo se vende por ahí; el dueño no tiene control porque
+  lo maneja su papá. Va a pasar la lista de publicaciones descargada de ML.
+
+Supuestos nuevos sin confirmar: la jota superpuesta lleva rueda de 60; el riel
+superpuesto de 3 m es plegado; la varilla se compra en barras de 6 m.
+
+Cosas que el sitio muestra y el Generador todavía no tiene: kit con **riel de
+ángulo** (150, 200 y 300 cm; lleva tirafondo y tarugos pero no separadores),
+**carros sueltos** (estándar rueda 50, reforzado rueda 60, superpuesto,
+giratoria, rueda libre), **manijas y manijones** (Manija SC, Manijón C, doble T,
+Mega manijón doble T, rizado, omega) y porta llaves, perchero y porta tazas.
 
 ## 7. Cómo leer el cuaderno
 
