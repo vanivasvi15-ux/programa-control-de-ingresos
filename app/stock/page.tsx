@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Chip, EstadoVacio } from "@/components/ui";
 import { formatearPesos, formatearFecha } from "@/lib/formato";
@@ -81,6 +82,30 @@ export default function StockResumenPage() {
   return (
     <div className="space-y-5">
       <Encabezado titulo="Taller" subtitulo="Stock, producción y costos" />
+
+      <Ayuda titulo="¿Qué veo en esta pantalla?">
+        <p>
+          Es el <strong>tablero del taller</strong>: de un vistazo te dice cuánto vale lo que hay en stock, qué material
+          está por acabarse, qué recuentos toca hacer y cuánto ganás con cada producto (precio − costo).
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            <strong>Escanear código</strong>: apuntás el lector a una etiqueta y te dice qué es, cuánto hay y si se puede
+            armar.
+          </li>
+          <li>
+            <strong>Bajo mínimo</strong>: materiales con menos stock que el aviso que pusiste (hora de comprar).
+          </li>
+          <li>
+            <strong>Datos incompletos</strong>: piezas sin receta o productos sin composición; hasta cargarlos el costo
+            no se puede calcular.
+          </li>
+        </ul>
+        <Ejemplo>
+          Costo $56.686, precio $145.000 → margen $88.314. Si el costo del material sube (cargás una compra más cara), el
+          margen baja solo.
+        </Ejemplo>
+      </Ayuda>
 
       <EscanerCodigo />
 

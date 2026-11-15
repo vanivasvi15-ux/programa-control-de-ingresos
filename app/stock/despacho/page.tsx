@@ -4,6 +4,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Boton, Chip, EstadoVacio } from "@/components/ui";
 import ConfirmDialog from "@/components/ConfirmDialog";
@@ -111,6 +112,33 @@ export default function DespachoPage() {
           </>
         }
       />
+
+      <Ayuda>
+        <p>
+          Es <strong>la lista de lo que hay que enviar</strong>. Cada tarjeta es <strong>una venta</strong>, con los datos
+          del cliente, la forma de entrega y qué productos lleva. Cargás las ventas con «Nueva venta» (después se van a
+          sumar solas las de Mercado Libre y la tienda).
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            <strong>Preparada</strong>: ya la armaste (sólo es una marca para organizarse).{" "}
+            <strong>Despachar</strong>: la venta sale y el sistema <strong>descuenta del stock</strong> lo que lleva.{" "}
+            <strong>Deshacer</strong>: la vuelve a «por despachar» y devuelve el stock.
+          </li>
+          <li>
+            La <strong>impresora</strong> imprime la etiqueta del paquete (10 × 15 cm), una por bulto. «Etiquetas
+            pendientes» las imprime todas juntas.
+          </li>
+          <li>
+            El aviso de color dice si <strong>se puede armar hoy</strong>: «stock ok», «hay que fabricar» (y qué) o «falta
+            material». <strong>Atrasadas</strong> son ventas de días anteriores que todavía no salieron.
+          </li>
+        </ul>
+        <Ejemplo>
+          Vendiste un kit a María (Córdoba). Lo marcás «Preparada», imprimís la etiqueta, la pegás en la caja y apretás
+          «Despachar»: bajan del stock las piezas del kit y la venta pasa a «Despachadas».
+        </Ejemplo>
+      </Ayuda>
 
       {/* Navegador de día */}
       <Tarjeta className="flex flex-wrap items-center gap-2 p-3">

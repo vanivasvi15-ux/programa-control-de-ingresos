@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Boton, Chip, Segmentado, EstadoVacio, inputClase } from "@/components/ui";
 import ConfirmDialog from "@/components/ConfirmDialog";
@@ -74,6 +75,31 @@ export default function InsumosPage() {
           </Boton>
         }
       />
+
+      <Ayuda>
+        <p>
+          Los <strong>insumos</strong> son todo el material que comprás: planchuela, ángulo, ruedas, tornillos, discos,
+          gas. Acá anotás cuánto hay (<strong>stock</strong>), cuánto cuesta y a partir de qué cantidad avisar que queda
+          poco (<strong>alerta de mínimo</strong>).
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            <strong>Materia prima</strong>: lo que se corta o se gasta (planchuela, ángulo).{" "}
+            <strong>Herraje</strong>: lo que se cuenta de a uno (ruedas, tornillos).{" "}
+            <strong>Consumible</strong>: lo difícil de medir (gas, discos): no va en las recetas, se controla con{" "}
+            <strong>Recuentos</strong>.
+          </li>
+          <li>
+            El stock <strong>sube</strong> cuando cargás una compra y <strong>baja</strong> solo cuando fabricás una pieza
+            que lo usa.
+          </li>
+        </ul>
+        <Ejemplo>
+          La planchuela se compra en tiras de 6 m pero se usa en centímetros. Entonces: unidad de compra «tira», unidad
+          de consumo «cm», y factor 600 (una tira = 600 cm). Si la tira cuesta $15.000, el sistema calcula solo que cada
+          cm sale $25.
+        </Ejemplo>
+      </Ayuda>
 
       {aviso && (
         <div className="mb-4 rounded-lg border border-[var(--color-warn)]/40 bg-[var(--color-warn-soft)] px-3 py-2 text-sm text-[var(--color-warn)]">

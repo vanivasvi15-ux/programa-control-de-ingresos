@@ -135,6 +135,7 @@ export type MovimientoStock = {
   itemTipo: "insumo" | "base";
   itemId: number;
   itemNombre: string | null;
+  unidad: string;
   delta: number;
   stockResultante: number;
   motivo: string;
@@ -197,15 +198,69 @@ export const NOMBRE_TIPO_INSUMO: Record<TipoInsumo, string> = {
   consumible: "Consumible",
 };
 
+// Nombres en palabras de todos los días (lo que se ve en el Historial).
 export const NOMBRE_MOTIVO_STOCK: Record<string, string> = {
-  compra: "Compra",
-  produccion_consumo: "Consumo de producción",
-  produccion_alta: "Alta de producción",
-  venta: "Venta",
-  ajuste: "Ajuste",
-  recuento: "Recuento",
-  anulacion: "Anulación",
+  compra: "Compra de material",
+  produccion_consumo: "Material gastado",
+  produccion_alta: "Pieza fabricada",
+  venta: "Salió por venta",
+  ajuste: "Ajuste a mano",
+  recuento: "Corrección por recuento",
+  anulacion: "Se deshizo",
 };
+
+// Qué significa cada motivo, con un ejemplo. Se muestra en la ayuda del
+// Historial y en la página Ayuda.
+export const DESCRIPCION_MOTIVO_STOCK: Record<string, { que: string; ejemplo: string }> = {
+  compra: {
+    que: "Entró material nuevo porque cargaste una compra.",
+    ejemplo: "Compraste 5 tiras de planchuela → la planchuela sube 3.000 cm.",
+  },
+  produccion_consumo: {
+    que: "Se gastó material para fabricar una pieza, según su receta.",
+    ejemplo: "Fabricás 2 rieles → la planchuela baja 400 cm y el ángulo 80 cm.",
+  },
+  produccion_alta: {
+    que: "Se sumó una pieza terminada al stock (por una orden de producción o por escaneo).",
+    ejemplo: "Escaneás la etiqueta de un Carro → el stock de Carro sube 1.",
+  },
+  venta: {
+    que: "Se despachó una venta y se descontó lo vendido.",
+    ejemplo: "Despachás un kit → bajan las piezas y herrajes que lleva.",
+  },
+  ajuste: {
+    que: "Alguien corrigió el stock a mano.",
+    ejemplo: "Se rompió una pieza y se la dio de baja.",
+  },
+  recuento: {
+    que: "Se contó lo que hay de verdad y el sistema se acomodó a ese número.",
+    ejemplo: "El sistema decía 10 discos de corte, contaste 8 → queda −2.",
+  },
+  anulacion: {
+    que: "Se deshizo un movimiento anterior: devuelve lo mismo pero al revés, para volver al valor de antes. No es un error: es la marca de que apretaste «Deshacer» o anulaste algo.",
+    ejemplo: "Escaneaste un Carro por equivocación y tocaste «Deshacer» → aparece +400 cm de planchuela (se devuelve) y −1 Carro.",
+  },
+};
+
+// De qué operación viene un movimiento, en una frase corta.
+export function textoOrigenMovimiento(tipo: string | null, id: number | null): string | null {
+  if (!tipo) return null;
+  const n = id != null ? ` #${id}` : "";
+  switch (tipo) {
+    case "orden_produccion":
+      return `Orden de producción${n}`;
+    case "escaneo":
+      return `Ingreso por escaneo${n}`;
+    case "venta":
+      return `Venta${n}`;
+    case "compra_insumo":
+      return `Compra de material${n}`;
+    case "recuento_lista":
+      return `Recuento${n}`;
+    default:
+      return `${tipo}${n}`;
+  }
+}
 
 // Formatea una cantidad de stock: sin decimales si es entera, con hasta 2 si no.
 export function formatearCantidad(n: number): string {

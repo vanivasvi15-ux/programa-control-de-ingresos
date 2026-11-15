@@ -42,7 +42,8 @@ type Nombre =
   | "enlace"
   | "pieza"
   | "camion"
-  | "impresora";
+  | "impresora"
+  | "ayuda";
 
 const PATHS: Record<Nombre, React.ReactNode> = {
   panel: (
@@ -266,6 +267,13 @@ const PATHS: Record<Nombre, React.ReactNode> = {
       <path d="M15 8h4l3 3v5h-7" />
       <circle cx="6" cy="18" r="2" />
       <circle cx="18" cy="18" r="2" />
+    </>
+  ),
+  ayuda: (
+    <>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+      <line x1="12" y1="17" x2="12.01" y2="17" />
     </>
   ),
   impresora: (

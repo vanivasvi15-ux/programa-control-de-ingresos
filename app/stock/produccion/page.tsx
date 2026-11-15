@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Boton, Chip, Segmentado, EstadoVacio } from "@/components/ui";
 import ConfirmDialog from "@/components/ConfirmDialog";
@@ -88,6 +89,26 @@ export default function ProduccionPage() {
           </Boton>
         }
       />
+
+      <Ayuda>
+        <p>
+          Una <strong>orden de producción</strong> es el aviso de que vas a <strong>fabricar piezas</strong>. Al
+          «Fabricar», el sistema <strong>descuenta los materiales</strong> de la receta y <strong>suma las piezas</strong>{" "}
+          al stock. Si falta material, no hace nada y te dice <strong>qué y cuánto falta</strong>.
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            <strong>Planificada</strong>: la dejás anotada para después. <strong>Realizada</strong>: ya se fabricó.{" "}
+            <strong>Anulada</strong>: se descartó, o se deshizo una que estaba hecha (devuelve los materiales).
+          </li>
+          <li>
+            Si en el taller usan <strong>Ingreso por escaneo</strong>, no hace falta cargar una orden por esas piezas: el
+            escaneo ya descuenta los materiales. Usá <strong>una u otra</strong> para una misma pieza; si hacés las dos, se
+            cuenta doble.
+          </li>
+        </ul>
+        <Ejemplo>Orden de 4 carros → baja el material de 4 carros, el stock de Carro sube 4 y queda anotado el costo de la tanda.</Ejemplo>
+      </Ayuda>
 
       {aviso && (
         <div

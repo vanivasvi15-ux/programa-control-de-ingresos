@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Boton, Chip, EstadoVacio } from "@/components/ui";
 import ConfirmDialog from "@/components/ConfirmDialog";
@@ -43,6 +44,19 @@ export default function RecuentosPage() {
           </Boton>
         }
       />
+
+      <Ayuda>
+        <p>
+          Hay cosas que no se pueden descontar pieza por pieza: el gas, los discos de corte, los electrodos. Para eso
+          armás una <strong>lista de recuento</strong> y, <strong>cada tantos días</strong>, alguien{" "}
+          <strong>cuenta lo que hay</strong> y lo carga. El sistema se acomoda a ese número y te marca cuándo toca volver a
+          contar.
+        </p>
+        <Ejemplo>
+          Lista «Consumibles de taller», cada 3 días, con discos de corte y alambre. El sistema decía 10 discos, contás 8 →
+          queda en 8 y el ajuste (−2) se anota en el Historial como «Corrección por recuento».
+        </Ejemplo>
+      </Ayuda>
 
       {cargando ? (
         <div className="space-y-3">

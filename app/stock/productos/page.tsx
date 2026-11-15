@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Boton, Chip, EstadoVacio, inputClase } from "@/components/ui";
 import ConfirmDialog from "@/components/ConfirmDialog";
@@ -95,6 +96,27 @@ export default function ProductosPage() {
           </>
         }
       />
+
+      <Ayuda>
+        <p>
+          Un <strong>producto</strong> es <strong>lo que vendés</strong>: normalmente un kit armado con varias piezas y
+          herrajes. Su <strong>composición</strong> dice qué lleva. El producto no tiene stock propio: se calcula con el
+          stock de sus piezas.
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            <strong>Costo</strong> = lo que cuesta fabricar todo lo que lleva. <strong>Margen</strong> = precio − costo.
+          </li>
+          <li>
+            Los <strong>avisos</strong> son las publicaciones de Mercado Libre o la tienda. Varios avisos con títulos
+            distintos pueden apuntar al <strong>mismo</strong> producto.
+          </li>
+        </ul>
+        <Ejemplo>
+          «Kit Puerta Granero — riel 200 con bisagra» lleva 1 riel, 2 carros, 2 topes de fin de riel y 1 tope de piso. Si
+          vendés uno, bajan esas piezas.
+        </Ejemplo>
+      </Ayuda>
 
       {aviso && (
         <div className="mb-4 rounded-lg border border-[var(--color-warn)]/40 bg-[var(--color-warn-soft)] px-3 py-2 text-sm text-[var(--color-warn)]">

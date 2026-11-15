@@ -61,14 +61,22 @@ export async function GET(req: NextRequest) {
                 CASE m.item_tipo
                   WHEN 'insumo' THEN (SELECT nombre FROM insumos WHERE id = m.item_id)
                   ELSE (SELECT nombre FROM productos_base WHERE id = m.item_id)
-                END AS item_nombre
+                END AS item_nombre,
+                CASE m.item_tipo
+                  WHEN 'insumo' THEN (SELECT unidad_consumo FROM insumos WHERE id = m.item_id)
+                  ELSE 'u'
+                END AS unidad
          FROM movimientos_stock m
          LEFT JOIN usuarios u ON u.id = m.usuario_id
          ${where}
          ORDER BY m.id DESC
          LIMIT ${limite}`
       )
-      .all(...val) as (MovStockRow & { usuario_nombre: string | null; item_nombre: string | null })[];
+      .all(...val) as (MovStockRow & {
+      usuario_nombre: string | null;
+      item_nombre: string | null;
+      unidad: string | null;
+    })[];
 
     return NextResponse.json(
       filas.map((m) => ({
@@ -76,6 +84,7 @@ export async function GET(req: NextRequest) {
         itemTipo: m.item_tipo,
         itemId: m.item_id,
         itemNombre: m.item_nombre,
+        unidad: m.unidad ?? "u",
         delta: m.delta,
         stockResultante: m.stock_resultante,
         motivo: m.motivo,

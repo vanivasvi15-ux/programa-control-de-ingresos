@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Boton, EstadoVacio } from "@/components/ui";
 import ConfirmDialog from "@/components/ConfirmDialog";
@@ -52,6 +53,21 @@ export default function ComprasPage() {
           </Boton>
         }
       />
+
+      <Ayuda>
+        <p>
+          Acá anotás <strong>cada compra de material</strong>. Al cargarla, el <strong>stock de ese material sube</strong>.
+          Si dejás tildado «usar este precio como el costo», también se <strong>actualiza el costo</strong> y se vuelve a
+          calcular lo que cuesta cada pieza y cada kit que lo usa.
+        </p>
+        <Ejemplo>
+          Comprás 5 tiras de planchuela a $15.000 cada una → el stock sube 3.000 cm (5 × 600) y cada cm pasa a costar $25.
+        </Ejemplo>
+        <p className="text-xs text-[var(--color-muted)]">
+          El tachito revierte la compra (baja el stock que había sumado). Todavía no genera el gasto en Control de Caja:
+          eso está pendiente.
+        </p>
+      </Ayuda>
 
       {aviso && (
         <div className="mb-4 rounded-lg border border-[var(--color-expense)]/40 bg-[var(--color-expense-soft)] px-3 py-2 text-sm text-[var(--color-expense)]">

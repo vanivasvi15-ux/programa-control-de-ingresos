@@ -27,6 +27,18 @@ API y panel `/stock` del taller). Ver `CLAUDE.md` y `README.md`.
 - **[hecho] Ingreso por escaneo** (2026-11-14): `/stock/ingreso`. Escanear la
   etiqueta de una pieza terminada suma al stock y descuenta los materiales de
   su receta. Detalle en `docs/FASE-2.md`.
+- **[hecho] Ayuda dentro del programa** (2026-11-14): recuadro «¿Cómo funciona
+  esta pantalla?» con ejemplos en cada pantalla del Taller, página
+  `/stock/ayuda` (recorrido, ejemplo de punta a punta, glosario, preguntas
+  frecuentes) y Historial en palabras simples (motivos con nombre claro, de qué
+  operación viene cada movimiento, unidades). Los textos están en
+  `components/Ayuda.tsx`, `lib/tipos-stock.ts` (`NOMBRE_/DESCRIPCION_MOTIVO_STOCK`)
+  y las páginas. **Ojo**: si cambia una regla del sistema, actualizar también
+  esos textos.
+- **Datos de prueba**: la base de esta compu tiene movimientos de mis pruebas
+  (ingresos «Se deshizo», etc.). Antes de cargar datos reales conviene limpiar
+  el stock con `npm run seed-stock` (recarga el ejemplo) o vaciar las tablas
+  de stock.
 - **Decisiones técnicas a tomar antes de usarlo en serio** (conversadas con el
   dueño el 2026-11-14):
   - **Dónde corre el sistema.** Hoy cada compu tiene su propia base (`data.db`
@@ -34,6 +46,11 @@ API y panel `/stock` del taller). Ver `CLAUDE.md` y `README.md`.
     hace falta **una sola compu prendida en el taller como servidor** (las
     demás entran por el navegador a `http://IP-DE-ESA-COMPU:3001`), o ponerlo
     en un servidor online. Elegido para arrancar: la compu del taller.
+  - **Dominio propio** (decidido el 2026-11-14: se va a comprar uno): con un
+    dominio se puede publicar el sistema con HTTPS (por ejemplo con Cloudflare
+    Tunnel apuntando a la compu del taller, o en un servidor online), y eso
+    habilita también la cámara del celular. Antes de abrirlo a internet:
+    borrar el usuario `testqa`, poner contraseñas fuertes y revisar roles.
   - **Cámara del celular**: el navegador sólo abre la cámara en una conexión
     segura (HTTPS), así que por red local común no anda. Opciones: lector
     Bluetooth/USB con el celular (anda sin HTTPS), un servicio de acceso seguro

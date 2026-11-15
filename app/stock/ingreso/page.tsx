@@ -6,6 +6,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Boton, Chip, EstadoVacio, inputClase } from "@/components/ui";
 import { formatearCantidad } from "@/lib/tipos-stock";
@@ -185,6 +186,36 @@ export default function IngresoPage() {
           </button>
         }
       />
+
+      <Ayuda>
+        <p>
+          Sirve para <strong>anotar piezas terminadas escaneando su etiqueta</strong>, sin escribir nada. Cada vez que
+          escaneás, el sistema <strong>suma 1 pieza</strong> al stock y <strong>descuenta los materiales</strong> que
+          lleva su receta.
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            Dejá el cursor en la caja de arriba y usá el lector: escribe el código y aprieta Enter solo. También podés
+            escribir el código a mano y apretar Enter.
+          </li>
+          <li>
+            ¿Varias piezas iguales juntas? Poné la <strong>cantidad</strong> y escaneá <strong>una sola vez</strong>.
+          </li>
+          <li>
+            ¿Te equivocaste? En «Últimos ingresos» tocá <strong>Deshacer</strong>: devuelve los materiales y saca las
+            piezas.
+          </li>
+          <li>
+            Si dice <strong>falta material</strong>, la pieza igual se cuenta (ya existe), pero avisa que el stock de ese
+            material en el sistema no alcanzaba: conviene cargar la compra o hacer un recuento.
+          </li>
+        </ul>
+        <Ejemplo>
+          Las chicas de embalaje terminan de envolver un Carro, le pegan la etiqueta <strong>PB00001</strong> y la
+          escanean: «+1 Carro», el stock de Carro sube y se descuentan sus materiales. El código sale de Piezas →
+          «Imprimir códigos».
+        </Ejemplo>
+      </Ayuda>
 
       <Tarjeta className="p-4">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_130px]">

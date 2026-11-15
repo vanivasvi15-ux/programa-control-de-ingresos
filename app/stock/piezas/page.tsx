@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Encabezado from "@/components/Encabezado";
+import Ayuda, { Ejemplo } from "@/components/Ayuda";
 import Icono from "@/components/Icono";
 import { Tarjeta, Boton, EstadoVacio, inputClase } from "@/components/ui";
 import ConfirmDialog from "@/components/ConfirmDialog";
@@ -107,6 +108,28 @@ export default function PiezasPage() {
           </>
         }
       />
+
+      <Ayuda>
+        <p>
+          Una <strong>pieza</strong> es algo que <strong>fabricás en el taller</strong>: un carro, un riel, un tope. Cada
+          una tiene su <strong>receta</strong> (qué materiales lleva y cuánto) y su <strong>código de barras</strong>.
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            Con la receta, el sistema calcula <strong>cuánto cuesta fabricarla</strong> y descuenta los materiales cuando
+            la fabricás (por Producción o escaneando en Ingreso).
+          </li>
+          <li>
+            La impresora imprime la <strong>etiqueta con el código</strong>. El botón de la etiqueta (🏷) crea un
+            producto para <strong>vender la pieza sola</strong>, como repuesto.
+          </li>
+          <li>La casilla «frena» de la receta dice si, al faltar ese material, no se puede fabricar.</li>
+        </ul>
+        <Ejemplo>
+          «Riel 200 con bisagra» lleva 200 cm de planchuela y 40 cm de ángulo. Al fabricar 2 rieles, el stock de
+          planchuela baja 400 cm, el de ángulo baja 80 cm, y el de rieles sube 2.
+        </Ejemplo>
+      </Ayuda>
 
       {aviso && (
         <div className="mb-4 rounded-lg border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-2 text-sm text-[var(--color-accent)]">

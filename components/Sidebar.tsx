@@ -44,6 +44,7 @@ const GRUPOS: Grupo[] = [
       { href: "/stock/compras", label: "Compras", icono: "carrito" },
       { href: "/stock/recuentos", label: "Recuentos", icono: "escaner" },
       { href: "/stock/movimientos", label: "Historial", icono: "movimientos" },
+      { href: "/stock/ayuda", label: "Ayuda", icono: "ayuda" },
     ],
   },
 ];
