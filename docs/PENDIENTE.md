@@ -24,6 +24,25 @@ API y panel `/stock` del taller). Ver `CLAUDE.md` y `README.md`.
 - **[hecho] Códigos de barras** (2026-11-14) para piezas base y productos
   finales: PB00001 / PF00001 automáticos o propios, etiquetas 60 × 40 mm,
   escáner en el Resumen del Taller. Detalle en `docs/FASE-2.md`.
+- **[hecho] Ingreso por escaneo** (2026-11-14): `/stock/ingreso`. Escanear la
+  etiqueta de una pieza terminada suma al stock y descuenta los materiales de
+  su receta. Detalle en `docs/FASE-2.md`.
+- **Decisiones técnicas a tomar antes de usarlo en serio** (conversadas con el
+  dueño el 2026-11-14):
+  - **Dónde corre el sistema.** Hoy cada compu tiene su propia base (`data.db`
+    no se sincroniza). Para que Embalaje, Despacho y el dueño usen lo mismo
+    hace falta **una sola compu prendida en el taller como servidor** (las
+    demás entran por el navegador a `http://IP-DE-ESA-COMPU:3001`), o ponerlo
+    en un servidor online. Elegido para arrancar: la compu del taller.
+  - **Cámara del celular**: el navegador sólo abre la cámara en una conexión
+    segura (HTTPS), así que por red local común no anda. Opciones: lector
+    Bluetooth/USB con el celular (anda sin HTTPS), un servicio de acceso seguro
+    (túnel) o servidor online. Se deja para después de probar con lector.
+  - **Base dentro de OneDrive**: `data.db` está en `Escritorio` y OneDrive la
+    sincroniza; con SQLite eso puede dañarla. Mover la base fuera de OneDrive
+    (ruta configurable) y programar copias de seguridad.
+  - Comprar un **lector 2D (imager)**: lee barras y QR, y también desde una
+    pantalla.
 - **Falta de esto**:
   0. Probar con el lector USB y la impresora reales; que Despacho, Producción
      y Recuentos también trabajen escaneando; códigos para insumos.

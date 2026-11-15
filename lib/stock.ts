@@ -830,3 +830,100 @@ export function validarPublicacion(
     },
   };
 }
+
+// ===========================================================================
+// INGRESO POR ESCANEO
+// ===========================================================================
+
+export type InsumoEnRojo = { nombre: string; stock: number; unidad: string };
+
+// Una pieza terminada y envuelta que se escanea: suma `cantidad` al stock de
+// la pieza y descuenta de cada insumo lo que pide su receta. A diferencia de
+// una orden de producción NUNCA se frena por falta de material: la pieza ya
+// existe físicamente, así que se cuenta igual. Si algún material bloqueante
+// queda en negativo, se devuelve en `enRojo` para que el taller revise el
+// stock de insumos. Todo o nada.
+export function ingresarPorEscaneo(args: {
+  piezaId: number;
+  codigo: string;
+  cantidad: number;
+  usuarioId: number | null;
+}): { escaneoId: number; pieza: string; stockPieza: number; enRojo: InsumoEnRojo[] } {
+  return transaccion(() => {
+    const pieza = db.prepare(`SELECT * FROM productos_base WHERE id = ?`).get(args.piezaId) as
+      | ProductoBaseRow
+      | undefined;
+    if (!pieza) throw new Error("La pieza no existe");
+
+    const r = db
+      .prepare(`INSERT INTO escaneos (codigo, item_tipo, item_id, cantidad, usuario_id) VALUES (?, 'base', ?, ?, ?)`)
+      .run(args.codigo, pieza.id, args.cantidad, args.usuarioId);
+    const escaneoId = Number(r.lastInsertRowid);
+
+    const insumos = mapaInsumosCalc();
+    const enRojo: InsumoEnRojo[] = [];
+    for (const l of recetaDe(pieza.id)) {
+      const ins = insumos.get(l.insumo_id);
+      if (!ins) continue;
+      const nuevo = moverStock({
+        itemTipo: "insumo",
+        itemId: ins.id,
+        delta: -(l.cantidad * args.cantidad),
+        motivo: "produccion_consumo",
+        referenciaTipo: "escaneo",
+        referenciaId: escaneoId,
+        costoUnitarioMomento: ins.costo_unitario,
+        usuarioId: args.usuarioId,
+        permitirNegativo: true,
+      });
+      if (nuevo < 0 && l.bloqueante === 1 && ins.tipo !== "consumible") {
+        enRojo.push({ nombre: ins.nombre, stock: Math.round(nuevo * 100) / 100, unidad: ins.unidad_consumo });
+      }
+    }
+
+    const stockPieza = moverStock({
+      itemTipo: "base",
+      itemId: pieza.id,
+      delta: args.cantidad,
+      motivo: "produccion_alta",
+      referenciaTipo: "escaneo",
+      referenciaId: escaneoId,
+      usuarioId: args.usuarioId,
+    });
+
+    return { escaneoId, pieza: pieza.nombre, stockPieza, enRojo };
+  });
+}
+
+// Deshace UN escaneo: devuelve los materiales y saca las piezas que sumó.
+// Falla si esas piezas ya no están en stock (se vendieron o se usaron).
+export function deshacerEscaneo(escaneoId: number, usuarioId: number | null): void {
+  transaccion(() => {
+    const e = db.prepare(`SELECT id, estado FROM escaneos WHERE id = ?`).get(escaneoId) as
+      | { id: number; estado: string }
+      | undefined;
+    if (!e) throw new Error("Escaneo no encontrado");
+    if (e.estado === "deshecho") throw new Error("Ese escaneo ya estaba deshecho");
+
+    const movs = db
+      .prepare(
+        `SELECT item_tipo, item_id, delta FROM movimientos_stock
+         WHERE referencia_tipo = 'escaneo' AND referencia_id = ?
+           AND motivo IN ('produccion_consumo','produccion_alta')`
+      )
+      .all(e.id) as { item_tipo: "insumo" | "base"; item_id: number; delta: number }[];
+    for (const m of movs) {
+      moverStock({
+        itemTipo: m.item_tipo,
+        itemId: m.item_id,
+        delta: -m.delta,
+        motivo: "anulacion",
+        referenciaTipo: "escaneo",
+        referenciaId: e.id,
+        usuarioId,
+        permitirNegativo: m.item_tipo === "insumo",
+      });
+    }
+    db.prepare(`UPDATE escaneos SET estado = 'deshecho', deshecho_en = datetime('now','localtime') WHERE id = ?`).run(e.id);
+  });
+}

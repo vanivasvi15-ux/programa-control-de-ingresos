@@ -242,6 +242,31 @@ ventas del día**, que se alimenta de la tienda y de Mercado Libre.
   escaneo en Despacho (marcar renglones preparados / despachar escaneando) y
   en Producción y Recuentos (cargar stock escaneando); códigos para insumos.
 
+**Hecho (2026-11-14) — ingreso por escaneo (sector Embalaje)**
+- Flujo: se imprimen etiquetas con el código de cada tipo de pieza; quien
+  termina de envolver una pieza le pega la etiqueta y la escanea en
+  `/stock/ingreso` (Taller → Ingreso). Cada escaneo **suma la pieza al stock y
+  descuenta de los insumos lo que pide su receta** (decisión del dueño).
+  Código **por tipo** de pieza (todas las etiquetas de "Carro" son iguales).
+- Tabla `escaneos` (quién, cuándo, cuántas) y `POST/GET /api/escaneos`,
+  `DELETE /api/escaneos/[id]` (deshacer un solo escaneo: devuelve materiales y
+  saca las piezas; 409 si esas piezas ya no están en stock).
+  `ingresarPorEscaneo` / `deshacerEscaneo` en `lib/stock.ts`.
+- **Nunca se frena por falta de material**: la pieza ya existe, así que se
+  cuenta; si un insumo bloqueante queda en negativo se muestra un aviso para
+  revisar su stock (comprar/recontar). Un código de kit (PF…) se rechaza con
+  mensaje; uno desconocido da 404.
+- Pantalla pensada para lector USB/Bluetooth: la caja siempre conserva el
+  cursor, los escaneos se mandan en orden sin bloquear, un escaneo repetido en
+  menos de 1,5 s se ignora (con aviso), pitido distinto para ok/error, los
+  **errores quedan fijos** hasta "Entendido", cantidad para varias piezas
+  juntas (vuelve a 1 sola), contador de la tanda, totales de hoy y "Deshacer".
+- **Falta**: probar con lector real; cámara del celular (necesita HTTPS: ver
+  abajo); usuario/PIN por persona para saber quién escaneó (hoy es el usuario
+  de la sesión); doble paso Producción → Embalaje; escanear al preparar el
+  envío para chequear contra la venta; códigos únicos por unidad (si hace
+  falta trazabilidad); dónde corre el sistema (ver PENDIENTE).
+
 - **Falta de este paso**: probar con la impresora real (márgenes, tamaño de
   fuente); código de barras / QR en la etiqueta; remitente editable (hoy fijo
   "Herrería VyV"); ZPL directo si el diálogo del navegador no alcanza; las

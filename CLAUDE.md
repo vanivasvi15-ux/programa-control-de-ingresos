@@ -282,6 +282,12 @@ por pasos: **[docs/FASE-2.md](docs/FASE-2.md)** y **[docs/FASE-2-PASO-1.md](docs
   tablas; `lib/codigos-datos.ts` (puro, con tests), dibujo con `jsbarcode`
   (`components/CodigoBarras.tsx`), `GET /api/codigos/[codigo]`, escáner en el
   Resumen del Taller y etiquetas 60 × 40 mm en `/etiquetas/codigos`.
+- **[hecho] Ingreso por escaneo** (2026-11-14): tabla `escaneos`,
+  `POST/GET /api/escaneos` y `DELETE /api/escaneos/[id]`,
+  `ingresarPorEscaneo`/`deshacerEscaneo` en `lib/stock.ts`, pantalla
+  `/stock/ingreso` para lector USB/Bluetooth. Un código por tipo de pieza; cada
+  escaneo suma la pieza y descuenta la receta (nunca se frena: avisa si un
+  material queda en negativo). Ver `docs/FASE-2.md`.
 - **Pendiente**: enganche compra → `gasto` en el Control de Caja; el aviso
   automático del recuento (cron); Pasos 3–6 (tienda, ML, MP, chatbot) y
   módulos A–E de FASE-2.md.

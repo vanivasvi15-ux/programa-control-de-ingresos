@@ -673,6 +673,24 @@ function crearConexion(): DatabaseSync {
       precio_unitario INTEGER NOT NULL DEFAULT 0
     );
     CREATE INDEX IF NOT EXISTS idx_venta_items_venta ON venta_items(venta_id);
+
+    -- INGRESO POR ESCANEO: cada vez que alguien escanea el codigo de una
+    -- pieza terminada y envuelta se suma al stock y se descuentan los
+    -- materiales de su receta. Cada fila es un escaneo (con quien y cuando)
+    -- y los movimientos de stock que genero apuntan a ella, asi se puede
+    -- deshacer solo ese escaneo.
+    CREATE TABLE IF NOT EXISTS escaneos (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      codigo TEXT NOT NULL,
+      item_tipo TEXT NOT NULL DEFAULT 'base' CHECK (item_tipo IN ('base')),
+      item_id INTEGER NOT NULL REFERENCES productos_base(id),
+      cantidad INTEGER NOT NULL CHECK (cantidad > 0),
+      estado TEXT NOT NULL DEFAULT 'activo' CHECK (estado IN ('activo', 'deshecho')),
+      usuario_id INTEGER REFERENCES usuarios(id),
+      creado TEXT NOT NULL DEFAULT (datetime('now', 'localtime')),
+      deshecho_en TEXT
+    );
+    CREATE INDEX IF NOT EXISTS idx_escaneos_creado ON escaneos(creado);
   `);
 
   // Semilla única de bot_respuestas_predeterminadas (sólo si está vacía).
