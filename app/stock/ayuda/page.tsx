@@ -91,6 +91,14 @@ const PREGUNTAS: [string, React.ReactNode][] = [
     "Mientras no tenga receta, el sistema no puede calcular su costo ni descontar materiales. En Piezas, tocá el lápiz y agregá los insumos que lleva.",
   ],
   [
+    "¿Tengo que cargar a mano todos los rieles y kits?",
+    <>
+      No. En <strong>Generador</strong> marcás el tipo de kit (estándar, reforzado, giratorio…) y los largos de riel, y el
+      sistema crea el riel, las jotas, los topes, los tubitos y el kit con las cantidades según los agujeros. Lo que ya
+      existe no se pisa, así que podés usarlo varias veces.
+    </>,
+  ],
+  [
     "¿Cómo imprimo etiquetas?",
     <>
       Para <strong>paquetes</strong>: en Despacho, el botón de la impresora de cada venta. Para <strong>piezas y

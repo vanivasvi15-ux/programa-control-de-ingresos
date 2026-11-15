@@ -288,6 +288,12 @@ por pasos: **[docs/FASE-2.md](docs/FASE-2.md)** y **[docs/FASE-2-PASO-1.md](docs
   `/stock/ingreso` para lector USB/Bluetooth. Un código por tipo de pieza; cada
   escaneo suma la pieza y descuenta la receta (nunca se frena: avisa si un
   material queda en negativo). Ver `docs/FASE-2.md`.
+- **[hecho] Generador de kits** (2026-11-15): `/stock/generador`,
+  `POST /api/generador` (`aplicar: false` = vista previa). Reglas puras en
+  `lib/generador-datos.ts` (+ tests): tabla largo → agujeros, tipos de jota,
+  cantidades del kit. `lib/generador.ts` crea materiales/piezas/kits sin pisar
+  lo que ya existe. Medidas y supuestos en `docs/CATALOGO-TALLER.md`; cómo
+  trabaja el taller en `docs/PROCESO-TALLER.md`.
 - **Pendiente**: enganche compra → `gasto` en el Control de Caja; el aviso
   automático del recuento (cron); Pasos 3–6 (tienda, ML, MP, chatbot) y
   módulos A–E de FASE-2.md.
