@@ -12,8 +12,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className="antialiased">{children}</body>
+    <html lang="es" suppressHydrationWarning>
+      {/* suppressHydrationWarning: alguna extensión del navegador (antivirus,
+          bloqueador de anuncios, etc.) le agrega un atributo tipo
+          __processed_<id>__ al <body> antes de que React hidrate. No es un
+          bug nuestro — no hay nada dinámico en este layout — así que se
+          calla el aviso en vez de perseguir un fantasma. */}
+      <body className="antialiased" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
